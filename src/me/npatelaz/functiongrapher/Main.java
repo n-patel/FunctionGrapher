@@ -22,7 +22,7 @@ public class Main
         frame.setVisible(true);
 
         // Set up graph panel
-        JPanel graphPanel = new JPanel();
+        GraphPanel graphPanel = new GraphPanel();
         graphPanel.setPreferredSize(new Dimension(600, 600));
         frame.add(graphPanel, BorderLayout.WEST);
 
