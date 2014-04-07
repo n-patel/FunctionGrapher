@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ead4f1e9-c78b-4027-a1ca-6f949cc1bd5d" name="Default" comment="Added function drawing on the graph panel">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FunctionGrapher.iws" />
@@ -100,7 +98,7 @@
       <file leaf-file-name="Axes.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="4" selection-start="2105" selection-end="2105" vertical-scroll-proportion="1.584507" vertical-offset="0" max-vertical-offset="1020">
+            <state line="59" column="5" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.7887324" vertical-offset="437" max-vertical-offset="1020">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -438,7 +436,11 @@
       <created>1396724892848</created>
       <updated>1396724892848</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added x- and y-axes">
+      <created>1396829829901</created>
+      <updated>1396829829901</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -487,7 +489,8 @@
     <MESSAGE value="Added Main class and method" />
     <MESSAGE value="Added graph panel and a config panel placeholder" />
     <MESSAGE value="Added scaling util" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added scaling util" />
+    <MESSAGE value="Added x- and y-axes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added x- and y-axes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -592,7 +595,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="4" selection-start="2105" selection-end="2105" vertical-scroll-proportion="1.584507" vertical-offset="0" max-vertical-offset="1020">
+        <state line="59" column="5" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.7887324" vertical-offset="437" max-vertical-offset="1020">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
