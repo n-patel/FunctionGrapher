@@ -1,7 +1,8 @@
 package me.npatelaz.functiongrapher.graph;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 /**
  * Description

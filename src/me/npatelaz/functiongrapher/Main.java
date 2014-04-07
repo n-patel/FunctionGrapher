@@ -2,8 +2,10 @@ package me.npatelaz.functiongrapher;
 
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 /**
  * Description

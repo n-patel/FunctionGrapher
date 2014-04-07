@@ -1,6 +1,6 @@
 package me.npatelaz.functiongrapher.util;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 
 /**
  * A set of utility methods to manage coordinate scaling (converting coordinates to pixels on a programmer-defined scale)
