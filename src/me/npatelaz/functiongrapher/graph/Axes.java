@@ -1,4 +1,4 @@
-package me.npatelaz.functiongrapher;
+package me.npatelaz.functiongrapher.graph;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,5 +58,5 @@ public class Axes
         }
 
     }
-    
+
 }

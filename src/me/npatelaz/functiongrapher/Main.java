@@ -1,5 +1,7 @@
 package me.npatelaz.functiongrapher;
 
+import me.npatelaz.functiongrapher.graph.GraphPanel;
+
 import javax.swing.*;
 import java.awt.*;
 

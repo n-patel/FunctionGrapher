@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead4f1e9-c78b-4027-a1ca-6f949cc1bd5d" name="Default" comment="Added function drawing on the graph panel">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" />
+    <list default="true" id="ead4f1e9-c78b-4027-a1ca-6f949cc1bd5d" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FunctionGrapher.iws" />
@@ -71,34 +73,34 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="39" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="600">
+            <state line="22" column="39" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GraphPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="22" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="22" column="22" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Function.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java">
+        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="55" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state line="32" column="55" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Axes.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java">
+        <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="5" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.7887324" vertical-offset="437" max-vertical-offset="1020">
+            <state line="47" column="0" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.44542253" vertical-offset="452" max-vertical-offset="1020">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" />
+        <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java" />
       </list>
     </option>
   </component>
@@ -213,6 +216,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunctionGrapher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunctionGrapher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functiongrapher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,7 +465,11 @@
       <created>1396829829901</created>
       <updated>1396829829901</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Made parameters look a little nicer">
+      <created>1396829964635</created>
+      <updated>1396829964635</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -490,7 +519,8 @@
     <MESSAGE value="Added graph panel and a config panel placeholder" />
     <MESSAGE value="Added scaling util" />
     <MESSAGE value="Added x- and y-axes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added x- and y-axes" />
+    <MESSAGE value="Made parameters look a little nicer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made parameters look a little nicer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -507,14 +537,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="45" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="17" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="735">
           <folding />
@@ -572,30 +602,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="22" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="22" column="22" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="39" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+        <state line="22" column="39" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="630">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Function.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="55" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+        <state line="32" column="55" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="5" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.7887324" vertical-offset="437" max-vertical-offset="1020">
+        <state line="47" column="0" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.44542253" vertical-offset="452" max-vertical-offset="1020">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
