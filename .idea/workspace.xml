@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead4f1e9-c78b-4027-a1ca-6f949cc1bd5d" name="Default" comment="">
+    <list default="true" id="ead4f1e9-c78b-4027-a1ca-6f949cc1bd5d" name="Default" comment="Cleaned up imports and changed IDEA project settings&#10;">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/np98765.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/GraphScalingHelper.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/GraphScalingHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java" afterPath="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FunctionGrapher.iws" />
@@ -78,7 +75,7 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+            <state line="11" column="7" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,7 +86,7 @@
       <file leaf-file-name="GraphPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="33" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+            <state line="14" column="33" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,7 +97,7 @@
       <file leaf-file-name="Function.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+            <state line="33" column="70" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +108,7 @@
       <file leaf-file-name="GraphScalingHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/GraphScalingHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+            <state line="147" column="0" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
               <folding />
             </state>
           </provider>
@@ -120,7 +117,7 @@
       <file leaf-file-name="Axes.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.017482517" vertical-offset="0" max-vertical-offset="1020">
+            <state line="41" column="59" selection-start="940" selection-end="940" vertical-scroll-proportion="0.7167832" vertical-offset="0" max-vertical-offset="1020">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,9 +142,9 @@
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/GraphPanel.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Axes.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/TestForm.form" />
-        <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java" />
+        <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/GraphScalingHelper.java" />
         <option value="$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java" />
       </list>
@@ -157,6 +154,25 @@
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="978" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -281,7 +297,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHub Repositories (nikhilpatel1)/FunctionGrapher" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -496,7 +512,11 @@
       <created>1396830284172</created>
       <updated>1396830284172</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cleaned up imports and changed IDEA project settings">
+      <created>1396841052102</created>
+      <updated>1396841052102</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -513,7 +533,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3310811" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33069977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -549,7 +569,8 @@
     <MESSAGE value="Added x- and y-axes" />
     <MESSAGE value="Made parameters look a little nicer" />
     <MESSAGE value="Moved graph-related classes to graph package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved graph-related classes to graph package" />
+    <MESSAGE value="Cleaned up imports and changed IDEA project settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up imports and changed IDEA project settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -625,9 +646,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+        <state line="11" column="7" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -636,16 +657,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/GraphPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="14" column="33" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+        <state line="33" column="70" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -654,14 +675,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/util/GraphScalingHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+        <state line="147" column="0" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/npatelaz/functiongrapher/graph/Axes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.017482517" vertical-offset="0" max-vertical-offset="1020">
+        <state line="41" column="59" selection-start="940" selection-end="940" vertical-scroll-proportion="0.7167832" vertical-offset="0" max-vertical-offset="1020">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
