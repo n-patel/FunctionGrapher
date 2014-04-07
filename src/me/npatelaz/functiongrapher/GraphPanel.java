@@ -18,5 +18,8 @@ public class GraphPanel extends JPanel
 
         Function function = new Function(this);
         function.draw(g2);
+
+        Axes axes = new Axes(this);
+        axes.draw(g2);
     }
 }
