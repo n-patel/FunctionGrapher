@@ -1,9 +1,9 @@
 package me.npatelaz.functiongrapher;
 
+import me.npatelaz.functiongrapher.config.ConfigPanel;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -31,9 +31,9 @@ public class Main
 		frame.add(graphPanel, BorderLayout.WEST);
 
 		// Set up right panel
-		JPanel rightPanel = new JPanel();
-		rightPanel.setPreferredSize(new Dimension(250, 600));
-		frame.add(rightPanel, BorderLayout.EAST);
+		ConfigPanel configPanel = new ConfigPanel();
+		configPanel.setPreferredSize(new Dimension(250, 600));
+		frame.add(configPanel, BorderLayout.EAST);
 
 	}
 }
