@@ -3,7 +3,6 @@ package me.npatelaz.functiongrapher.config;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
-import java.awt.Graphics;
 
 /**
  * Description
@@ -13,9 +12,8 @@ import java.awt.Graphics;
  */
 public class AxesConfig extends JPanel
 {
-	public void paintComponent(Graphics g)
+	public void initializePanel()
 	{
-		super.paintComponent(g);
 		MigLayout migLayout = new MigLayout("wrap 2");
 		setLayout(migLayout);
 

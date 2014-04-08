@@ -33,6 +33,7 @@ public class Main
 		// Set up right panel
 		ConfigPanel configPanel = new ConfigPanel();
 		configPanel.setPreferredSize(new Dimension(250, 600));
+		configPanel.initializePanel();
 		frame.add(configPanel, BorderLayout.EAST);
 
 	}
