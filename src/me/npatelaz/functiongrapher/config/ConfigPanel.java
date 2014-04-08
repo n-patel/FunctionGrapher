@@ -1,5 +1,6 @@
 package me.npatelaz.functiongrapher.config;
 
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 
@@ -16,9 +17,11 @@ public class ConfigPanel extends JPanel
 		super.paintComponent(g);
 
 		FunctionConfig functionConfig = new FunctionConfig();
+		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
 		add(functionConfig);
 
 		AxesConfig axesConfig = new AxesConfig();
+		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
 		add(axesConfig);
 	}
 }

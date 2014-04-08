@@ -20,16 +20,16 @@ public class AxesConfig extends JPanel
 		setLayout(migLayout);
 
 		add(new JLabel("XMIN"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 		add(new JLabel("XMAX"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 		add(new JLabel("XSCL"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 		add(new JLabel("YMIN"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 		add(new JLabel("YMAX"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 		add(new JLabel("YSCL"));
-		add(new JTextField(7));
+		add(new JTextField(7), "gapleft 50");
 	}
 }

@@ -20,8 +20,8 @@ public class FunctionConfig extends JPanel
 		setLayout(migLayout);
 
 		add(new JLabel("Function"));
-		add(new JTextField(10));
+		add(new JTextField(8), "gapleft 16");
 		add(new JLabel("Color"));
-		add(new JTextField(10));
+		add(new JTextField(8), "gapleft 16");
 	}
 }
