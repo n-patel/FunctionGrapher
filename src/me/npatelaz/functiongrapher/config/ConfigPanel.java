@@ -14,6 +14,11 @@ public class ConfigPanel extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		// TODO
+
+		FunctionConfig functionConfig = new FunctionConfig();
+		add(functionConfig);
+
+		AxesConfig axesConfig = new AxesConfig();
+		add(axesConfig);
 	}
 }
