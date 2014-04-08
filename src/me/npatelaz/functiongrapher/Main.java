@@ -30,11 +30,13 @@ public class Main
 		graphPanel.setPreferredSize(new Dimension(600, 600));
 		frame.add(graphPanel, BorderLayout.WEST);
 
-		// Set up right panel
+		// Set up config panel
 		ConfigPanel configPanel = new ConfigPanel();
 		configPanel.setPreferredSize(new Dimension(250, 600));
 		configPanel.initializePanel();
 		frame.add(configPanel, BorderLayout.EAST);
+
+		frame.pack();
 
 	}
 }
