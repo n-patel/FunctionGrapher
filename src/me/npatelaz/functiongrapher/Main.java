@@ -28,7 +28,7 @@ public class Main
 		// Set up graph panel
 		GraphPanel graphPanel = new GraphPanel();
 		graphPanel.setPreferredSize(new Dimension(600, 600));
-		frame.add(graphPanel, BorderLayout.WEST);
+		frame.add(graphPanel, BorderLayout.CENTER);
 
 		// Set up config panel
 		ConfigPanel configPanel = new ConfigPanel();
