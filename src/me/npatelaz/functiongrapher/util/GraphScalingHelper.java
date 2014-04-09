@@ -147,7 +147,7 @@ public class GraphScalingHelper
 		GraphScalingHelper.YMAX = YMAX;
 	}
 
-    
+
     public static int getXSCL()
     {
         return XSCL;
