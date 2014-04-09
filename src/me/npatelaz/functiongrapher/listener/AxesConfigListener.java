@@ -29,7 +29,7 @@ public class AxesConfigListener implements ActionListener
 			case "XMAX": setXMAX(fieldValue);    break;
 			case "XSCL": /* TODO */              break;
 			case "YMIN": setYMIN(fieldValue);    break;
-			case "YMAX": setYMIN(fieldValue);    break;
+			case "YMAX": setYMAX(fieldValue);    break;
 			case "YSCL": /* TODO */              break;
 		}
 
