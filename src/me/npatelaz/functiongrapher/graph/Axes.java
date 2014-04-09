@@ -41,46 +41,42 @@ public class Axes
 		// Draw ticks along the positive part of the x-axis
 		for (x = 0; x <= getXMAX(); x += getXSCL())
 		{
-			drawXTick(g2, x);
+			drawTick(g2, x, 0);
 		}
 
 		// Draw ticks along the negative part of the x-axis
 		for (x = 0; x >= getXMIN(); x -= getXSCL())
 		{
-			drawXTick(g2, x);
+			drawTick(g2, x, 0);
 		}
 
 		// Draw ticks along the positive part of the y-axis
 		for (y = 0; y <= getYMAX(); y += getYSCL())
 		{
-			drawYTick(g2, y);
+			drawTick(g2, 0, y);
 		}
 
 		// Draw ticks along the negative part of the y-axis
-		for (y = 0; y >= getXMIN(); y -= getYSCL())
+		for (y = 0; y >= getYMIN(); y -= getYSCL())
 		{
-			drawYTick(g2, y);
+			drawTick(g2, 0, y);
 		}
 
 	}
 
-	public void drawXTick(Graphics2D g2, double x)
+	public void drawTick(Graphics2D g2, double x, double y)
 	{
-		Point2D.Double tickBottom = new Point2D.Double(xPixel(x, p),
-		                                               yPixel(0, p) + sHeight(.2, p));
-		Point2D.Double tickTop    = new Point2D.Double(xPixel(x, p),
-		                                               yPixel(0, p) - sHeight(.2, p));
-		Line2D.Double tick = new Line2D.Double(tickBottom, tickTop);
-		g2.draw(tick);
-	}
+		if (x == 0 && y == 0) return;           // no tickmark at the origin
 
-	public void drawYTick(Graphics2D g2, double y)
-	{
-		Point2D.Double tickLeft  = new Point2D.Double(xPixel(0, p) + sWidth(.2, p),
-		                                              yPixel(y, p));
-		Point2D.Double tickRight = new Point2D.Double(xPixel(0, p) - sWidth(.2, p),
-		                                              yPixel(y, p));
-		Line2D.Double tick = new Line2D.Double(tickLeft, tickRight);
+		// v and h are used to decide whether to draw vertical or horizontal ticks
+		double v = (x==0)? 1 : 0;
+		double h = (y==0)? 1 : 0;
+
+		Point2D.Double tickStart = new Point2D.Double(xPixel(x, p) + v * sWidth(.2, p),
+		                                              yPixel(y, p) + h * sHeight(.2, p));
+		Point2D.Double tickEnd   = new Point2D.Double(xPixel(x, p) - v * sWidth(.2, p),
+		                                              yPixel(y, p) - h * sHeight(.2, p));
+		Line2D.Double tick = new Line2D.Double(tickStart, tickEnd);
 		g2.draw(tick);
 	}
 
