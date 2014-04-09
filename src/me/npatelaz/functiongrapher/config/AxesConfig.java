@@ -1,5 +1,6 @@
 package me.npatelaz.functiongrapher.config;
 
+import me.npatelaz.functiongrapher.listener.AxesConfigListener;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
@@ -17,17 +18,39 @@ public class AxesConfig extends JPanel
 		MigLayout migLayout = new MigLayout("wrap 2");
 		setLayout(migLayout);
 
+		JTextField xmin = new JTextField(7);
+		JTextField xmax = new JTextField(7);
+		JTextField xscl = new JTextField(7);
+		JTextField ymin = new JTextField(7);
+		JTextField ymax = new JTextField(7);
+		JTextField yscl = new JTextField(7);
+
+		AxesConfigListener axesConfigListener = new AxesConfigListener();
+		xmin.addActionListener(axesConfigListener);
+		xmax.addActionListener(axesConfigListener);
+		xscl.addActionListener(axesConfigListener);
+		ymin.addActionListener(axesConfigListener);
+		ymax.addActionListener(axesConfigListener);
+		yscl.addActionListener(axesConfigListener);
+
+		xmin.setActionCommand("XMIN");
+		xmax.setActionCommand("XMAX");
+		xscl.setActionCommand("XSCL");
+		ymin.setActionCommand("YMIN");
+		ymax.setActionCommand("YMAX");
+		yscl.setActionCommand("YSCL");
+
 		add(new JLabel("XMIN"));
-		add(new JTextField(7), "gapleft 50");
+		add(xmin, "gapleft 50");
 		add(new JLabel("XMAX"));
-		add(new JTextField(7), "gapleft 50");
+		add(xmax, "gapleft 50");
 		add(new JLabel("XSCL"));
-		add(new JTextField(7), "gapleft 50");
+		add(xscl, "gapleft 50");
 		add(new JLabel("YMIN"));
-		add(new JTextField(7), "gapleft 50");
+		add(ymin, "gapleft 50");
 		add(new JLabel("YMAX"));
-		add(new JTextField(7), "gapleft 50");
+		add(ymax, "gapleft 50");
 		add(new JLabel("YSCL"));
-		add(new JTextField(7), "gapleft 50");
+		add(yscl, "gapleft 50");
 	}
 }
