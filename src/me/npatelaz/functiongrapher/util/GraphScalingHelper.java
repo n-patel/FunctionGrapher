@@ -15,9 +15,10 @@ public class GraphScalingHelper
 	// However, they act as constants and are therefore named as such.
 	private static int XMIN = -10;
 	private static int XMAX = 10;
+    private static int XSCL = 1;
 	private static int YMIN = -10;
 	private static int YMAX = 10;
-
+    private static int YSCL = 1;
 
 	/**
 	 * Scales the x-pixel
@@ -67,17 +68,37 @@ public class GraphScalingHelper
 	}
 
 
-	/**
-	 * Sets the XMIN value (lowest x-coordinate)
-	 * @param XMIN
-	 */
-	public static void setXMIN(int XMIN)
-	{
-		GraphScalingHelper.XMIN = XMIN;
-	}
+    /**
+     * Gets the XMIN value (lowest x-coordinate)
+     * @return XMIN
+     */
+    public static int getXMIN()
+    {
+        return XMIN;
+    }
 
 
-	/**
+    /**
+     * Sets the XMIN value (lowest x-coordinate)
+     * @param XMIN
+     */
+    public static void setXMIN(int XMIN)
+    {
+        GraphScalingHelper.XMIN = XMIN;
+    }
+
+
+    /**
+     * Gets the XMAX value (highest x-coordinate)
+     * @return XMAX
+     */
+    public static int getXMAX()
+    {
+        return XMAX;
+    }
+
+
+    /**
 	 * Sets the XMAX value (highest x-coordinate)
 	 * @param XMAX
 	 */
@@ -87,7 +108,17 @@ public class GraphScalingHelper
 	}
 
 
-	/**
+    /**
+     * Gets the YMIN value (lowest y-coordinate)
+     * @return YMIN
+     */
+    public static int getYMIN()
+    {
+        return YMIN;
+    }
+
+
+    /**
 	 * Sets the YMIN value (lowest y-coordinate)
 	 * @param YMIN
 	 */
@@ -97,7 +128,17 @@ public class GraphScalingHelper
 	}
 
 
-	/**
+    /**
+     * Gets the YMAX value (highest y-coordinate)
+     * @return YMAX
+     */
+    public static int getYMAX()
+    {
+        return YMAX;
+    }
+
+
+    /**
 	 * Sets the YMAX value (highest y-coordinate)
 	 * @param YMAX
 	 */
@@ -106,44 +147,24 @@ public class GraphScalingHelper
 		GraphScalingHelper.YMAX = YMAX;
 	}
 
+    
+    public static int getXSCL()
+    {
+        return XSCL;
+    }
 
-	/**
-	 * Gets the XMIN value (lowest x-coordinate)
-	 * @return XMIN
-	 */
-	public static int getXMIN()
-	{
-		return XMIN;
-	}
+    public static void setXSCL(int XSCL)
+    {
+        GraphScalingHelper.XSCL = XSCL;
+    }
 
+    public static int getYSCL()
+    {
+        return YSCL;
+    }
 
-	/**
-	 * Gets the XMAX value (highest x-coordinate)
-	 * @return XMAX
-	 */
-	public static int getXMAX()
-	{
-		return XMAX;
-	}
-
-
-	/**
-	 * Gets the YMIN value (lowest y-coordinate)
-	 * @return YMIN
-	 */
-	public static int getYMIN()
-	{
-		return YMIN;
-	}
-
-
-	/**
-	 * Gets the YMAX value (highest y-coordinate)
-	 * @return YMAX
-	 */
-	public static int getYMAX()
-	{
-		return YMAX;
-	}
-
+    public static void setYSCL(int YSCL)
+    {
+        GraphScalingHelper.YSCL = YSCL;
+    }
 }
