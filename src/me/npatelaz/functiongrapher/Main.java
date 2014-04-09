@@ -4,6 +4,7 @@ import me.npatelaz.functiongrapher.config.ConfigPanel;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -22,7 +23,7 @@ public class Main
 		frame.setTitle("Function Grapher");
 		frame.setSize(850, 600);
 		frame.setResizable(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
 		// Set up graph panel
