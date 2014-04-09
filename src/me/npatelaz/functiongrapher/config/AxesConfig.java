@@ -22,15 +22,14 @@ public class AxesConfig extends JPanel
 
 		String[] labels = {"XMIN", "XMAX", "XSCL", "YMIN", "YMAX", "YSCL"};
 
-		for (int i = 0; i < labels.length; i++)
-		{
-			JTextField tf = new JTextField(7);
-			tf.addActionListener(axesConfigListener);
-			tf.setActionCommand(labels[i]);
+        for (String label : labels) {
+            JTextField tf = new JTextField(7);
+            tf.addActionListener(axesConfigListener);
+            tf.setActionCommand(label);
 
-			add(new JLabel(labels[i]));
-			add(tf, "gapleft 50");
-		}
+            add(new JLabel(label));
+            add(tf, "gapleft 50");
+        }
 
 	}
 
