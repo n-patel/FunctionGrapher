@@ -35,28 +35,53 @@ public class Axes
 		g2.draw(xAxis);
 		g2.draw(yAxis);
 
-		// Draw ticks along the x-axis
-		for (int x = getXMIN(); x <= getXMAX(); x += getXSCL())
+		int x;
+		int y;
+
+		// Draw ticks along the positive part of the x-axis
+		for (x = 0; x <= getXMAX(); x += getXSCL())
 		{
-			Point2D.Double tickBottom = new Point2D.Double(xPixel(x, p),
-														   yPixel(0, p) + sHeight(.2, p));
-			Point2D.Double tickTop    = new Point2D.Double(xPixel(x, p),
-														   yPixel(0, p) - sHeight(.2, p));
-			Line2D.Double tick = new Line2D.Double(tickBottom, tickTop);
-			g2.draw(tick);
+			drawXTick(g2, x);
 		}
 
-		// Draw ticks along the y-axis
-		for (int y = getYMIN(); y <= getYMAX(); y += getYSCL())
+		// Draw ticks along the negative part of the x-axis
+		for (x = 0; x >= getXMIN(); x -= getXSCL())
 		{
-			Point2D.Double tickLeft  = new Point2D.Double(xPixel(0, p) + sWidth(.2, p),
-														  yPixel(y, p));
-			Point2D.Double tickRight = new Point2D.Double(xPixel(0, p) - sWidth(.2, p),
-														  yPixel(y, p));
-			Line2D.Double tick = new Line2D.Double(tickLeft, tickRight);
-			g2.draw(tick);
+			drawXTick(g2, x);
 		}
 
+		// Draw ticks along the positive part of the y-axis
+		for (y = 0; y <= getYMAX(); y += getYSCL())
+		{
+			drawYTick(g2, y);
+		}
+
+		// Draw ticks along the negative part of the y-axis
+		for (y = 0; y >= getXMIN(); y -= getYSCL())
+		{
+			drawYTick(g2, y);
+		}
+
+	}
+
+	public void drawXTick(Graphics2D g2, double x)
+	{
+		Point2D.Double tickBottom = new Point2D.Double(xPixel(x, p),
+		                                               yPixel(0, p) + sHeight(.2, p));
+		Point2D.Double tickTop    = new Point2D.Double(xPixel(x, p),
+		                                               yPixel(0, p) - sHeight(.2, p));
+		Line2D.Double tick = new Line2D.Double(tickBottom, tickTop);
+		g2.draw(tick);
+	}
+
+	public void drawYTick(Graphics2D g2, double y)
+	{
+		Point2D.Double tickLeft  = new Point2D.Double(xPixel(0, p) + sWidth(.2, p),
+		                                              yPixel(y, p));
+		Point2D.Double tickRight = new Point2D.Double(xPixel(0, p) - sWidth(.2, p),
+		                                              yPixel(y, p));
+		Line2D.Double tick = new Line2D.Double(tickLeft, tickRight);
+		g2.draw(tick);
 	}
 
 }
