@@ -27,10 +27,10 @@ public class AxesConfigListener implements ActionListener
 		{
 			case "XMIN": setXMIN(fieldValue);    break;
 			case "XMAX": setXMAX(fieldValue);    break;
-			case "XSCL": /* TODO */              break;
+			case "XSCL": setXSCL(fieldValue);    break;
 			case "YMIN": setYMIN(fieldValue);    break;
 			case "YMAX": setYMAX(fieldValue);    break;
-			case "YSCL": /* TODO */              break;
+			case "YSCL": setYSCL(fieldValue);    break;
 		}
 
 		// Not my favorite way of updating the graphpanel but it will have to suffice

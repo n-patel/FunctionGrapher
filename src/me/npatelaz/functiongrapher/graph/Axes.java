@@ -36,7 +36,7 @@ public class Axes
 		g2.draw(yAxis);
 
 		// Draw ticks along the x-axis
-		for (int x = getXMIN(); x <= getXMAX(); x++)
+		for (int x = getXMIN(); x <= getXMAX(); x += getXSCL())
 		{
 			Point2D.Double tickBottom = new Point2D.Double(xPixel(x, p),
 														   yPixel(0, p) + sHeight(.2, p));
@@ -47,7 +47,7 @@ public class Axes
 		}
 
 		// Draw ticks along the y-axis
-		for (int y = getYMIN(); y <= getYMAX(); y++)
+		for (int y = getYMIN(); y <= getYMAX(); y += getYSCL())
 		{
 			Point2D.Double tickLeft  = new Point2D.Double(xPixel(0, p) + sWidth(.2, p),
 														  yPixel(y, p));
