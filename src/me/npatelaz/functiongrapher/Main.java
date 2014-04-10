@@ -9,8 +9,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 /**
- * Description
- * <p/>
+ * An application which graphs function. TODO: insert continued description here
+ *
  * Nikhil Patel
  * File created on Apr 05, 2014
  */

@@ -8,8 +8,8 @@ import java.awt.geom.Point2D;
 import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
 
 /**
- * Description
- * <p/>
+ * Draws x- and y-axes on the graph.
+ *
  * Nikhil Patel
  * File created on Apr 06, 2014
  */
@@ -17,11 +17,20 @@ public class Axes
 {
 	private JPanel p;
 
+	/**
+	 * Constructor to set the panel to draw on
+	 * @param panel     JPanel to draw on
+	 */
 	public Axes(JPanel panel)
 	{
 		this.p = panel;
 	}
 
+
+	/**
+	 * Draws x- and y-axes on the graph
+	 * @param g2        Graphics2D instance for drawing
+	 */
 	public void draw(Graphics2D g2)
 	{
 		Line2D.Double xAxis = new Line2D.Double(xPixel(getXMIN(), p),
@@ -64,6 +73,13 @@ public class Axes
 
 	}
 
+
+	/**
+	 * Draws vertical and horizontal ticks at the specified x and y location
+	 * @param g2        Graphics2D instance for drawing
+	 * @param x         tickmark x-value
+	 * @param y         tickmark y-value
+	 */
 	public void drawTick(Graphics2D g2, double x, double y)
 	{
 		if (x == 0 && y == 0) return;           // no tickmark at the origin

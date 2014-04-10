@@ -3,8 +3,8 @@ package me.npatelaz.functiongrapher.util;
 import javax.swing.JPanel;
 
 /**
- * A set of utility methods to manage coordinate scaling (converting coordinates to pixels on a programmer-defined scale)
- * <p/>
+ * A set of utility methods to manage coordinate scaling (converting coordinates to pixels on a programmer-defined scale).
+ *
  * Nikhil Patel
  * File created a long time ago (imported into project: Apr 05, 2014)
  */
@@ -148,21 +148,40 @@ public class GraphScalingHelper
 	}
 
 
+	/**
+	 * Gets the XSCL value (x-axis scaling)
+	 * @return XSCL
+	 */
     public static int getXSCL()
     {
         return XSCL;
     }
 
+
+	/**
+	 * Sets the XSCL value (x-axis scaling)
+	 * @param XSCL
+	 */
     public static void setXSCL(int XSCL)
     {
         GraphScalingHelper.XSCL = XSCL;
     }
 
+
+	/**
+	 * Gets the YSCL value (y-axis scaling)
+	 * @return YSCL
+	 */
     public static int getYSCL()
     {
         return YSCL;
     }
 
+
+	/**
+	 * Sets the YSCL value (y-axis scaling)
+	 * @param YSCL
+	 */
     public static void setYSCL(int YSCL)
     {
         GraphScalingHelper.YSCL = YSCL;

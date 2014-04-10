@@ -6,13 +6,16 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 
 /**
- * Description
+ * JPanel that contains the axes portion of the in-application configuration.
  *
  * Nikhil Patel
  * File created on Apr 07, 2014
  */
 public class AxesConfig extends JPanel
 {
+	/**
+	 * Initializes the JPanel with the axes configuration text fields
+	 */
 	public void initializePanel()
 	{
 		MigLayout migLayout = new MigLayout("wrap 2");

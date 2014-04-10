@@ -8,8 +8,8 @@ import java.awt.geom.Point2D;
 import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
 
 /**
- * Description
- * <p/>
+ * Draws a function.
+ *
  * Nikhil Patel
  * File created on Apr 05, 2014
  */
@@ -17,11 +17,20 @@ public class Function
 {
 	private JPanel p;
 
+	/**
+	 * Constructor to set the panel to draw on
+	 * @param panel     JPanel to draw on
+	 */
 	public Function(JPanel panel)
 	{
 		this.p = panel;
 	}
 
+
+	/**
+	 * Draws a function, evaluating y values for x values from the beginning to the end of the panel
+	 * @param g2        Graphics2D instance for drawing
+	 */
 	public void draw(Graphics2D g2)
 	{
 		double d = .00001;
@@ -37,6 +46,12 @@ public class Function
 
 	}
 
+
+	/**
+	 * Gets the y-value of a certain function for the given x-value
+	 * @param x         x-value used to calculate y-value
+	 * @return          y-value
+	 */
 	public static double getValue(double x)
 	{
 		return .5 * x * x;       // temporary function until I make it configurable
