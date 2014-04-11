@@ -33,7 +33,7 @@ public class Function
 	 */
 	public void draw(Graphics2D g2)
 	{
-		double d = .00001;
+		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
 			Point2D.Double point1 = new Point2D.Double(xPixel(x, p),
