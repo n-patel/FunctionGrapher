@@ -8,6 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="miglayout-4.0-swing" level="project" />
+    <orderEntry type="library" name="expr" level="project" />
   </component>
 </module>
 
