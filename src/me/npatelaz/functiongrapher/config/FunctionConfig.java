@@ -1,5 +1,6 @@
 package me.npatelaz.functiongrapher.config;
 
+import me.npatelaz.functiongrapher.listener.FunctionConfigListener;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
@@ -19,6 +20,10 @@ public class FunctionConfig extends JPanel
 	{
 		MigLayout migLayout = new MigLayout("wrap 2");
 		setLayout(migLayout);
+
+		JTextField function = new JTextField(8);
+		function.addActionListener(new FunctionConfigListener());
+		function.setActionCommand("FUNCTION");
 
 		add(new JLabel("Function"));
 		add(new JTextField(8), "gapleft 16");

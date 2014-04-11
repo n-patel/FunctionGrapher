@@ -22,6 +22,13 @@ public class Function
 	private Expr expression;
 
 	/**
+	 * Constructor to set the expression
+	 */
+	public Function()
+	{
+	}
+
+	/**
 	 * Constructor to set the panel to draw on
 	 * @param panel     JPanel to draw on
 	 */
@@ -37,7 +44,6 @@ public class Function
 	 */
 	public void draw(Graphics2D g2)
 	{
-		setExpression("x^3 + x - 4");
 		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
