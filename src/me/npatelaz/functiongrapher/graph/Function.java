@@ -1,5 +1,8 @@
 package me.npatelaz.functiongrapher.graph;
 
+import expr.*;
+
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
@@ -16,6 +19,7 @@ import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
 public class Function
 {
 	private JPanel p;
+	private Expr expression;
 
 	/**
 	 * Constructor to set the panel to draw on
@@ -33,6 +37,7 @@ public class Function
 	 */
 	public void draw(Graphics2D g2)
 	{
+		setExpression("x^3 + x - 4");
 		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
@@ -47,13 +52,29 @@ public class Function
 	}
 
 
+	public void setExpression(String expression)
+	{
+		try
+		{
+			this.expression = Parser.parse(expression);
+		}
+		catch (SyntaxException e)
+		{
+			JOptionPane.showMessageDialog(null, "Invalid expression.");
+			e.printStackTrace();
+		}
+	}
+
+
 	/**
 	 * Gets the y-value of a certain function for the given x-value
 	 * @param x         x-value used to calculate y-value
 	 * @return          y-value
 	 */
-	public static double getValue(double x)
+	private double getValue(double x)
 	{
-		return .5 * x * x;       // temporary function until I make it configurable
+		Variable varX = Variable.make("x");
+		varX.setValue(x);
+		return expression.value();
 	}
 }
