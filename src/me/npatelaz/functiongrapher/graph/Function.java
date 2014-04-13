@@ -18,15 +18,10 @@ import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
  */
 public class Function
 {
-	private JPanel p;
 	private static Expr expression;
 
-	/**
-	 * Constructor to set the expression
-	 */
-	public Function()
-	{
-	}
+	private JPanel p;
+
 
 	/**
 	 * Constructor to set the panel to draw on
@@ -58,6 +53,13 @@ public class Function
 	}
 
 
+	/**
+	 * Sets the expression to be graphed
+	 *
+	 * NOTE: Can be accessed statically so that GraphPanel can repaint using the same instance
+	 *
+	 * @param expression    expression to be graphed
+	 */
 	public static void setExpression(String expression)
 	{
 		try
@@ -79,14 +81,14 @@ public class Function
 	 */
 	private static double getValue(double x)
 	{
-		System.out.println(expression);
 		if (expression == null)
 		{
-			System.out.println("Set to default");
+			// set expression to the default expression (for now)
 			setExpression("x^2");
 		}
 		Variable varX = Variable.make("x");
 		varX.setValue(x);
 		return expression.value();
 	}
+
 }
