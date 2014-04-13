@@ -1,8 +1,10 @@
 package me.npatelaz.functiongrapher.listener;
 
 import me.npatelaz.functiongrapher.graph.Function;
+import me.npatelaz.functiongrapher.graph.GraphPanel;
 
 import javax.swing.JTextField;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,11 +22,20 @@ public class FunctionConfigListener implements ActionListener
 		JTextField textField = (JTextField)e.getSource();
 		String fieldValue = textField.getText();
 
-		Function function;
-
-		switch(command)
+		if (command.equals("FUNCTION"))
 		{
-			case "FUNCTION":    function = new Function(); function.setExpression(fieldValue);
+			Function.setExpression(fieldValue);
+			System.out.println("Set expression to " + fieldValue);
+		}
+
+		// Update the graph panel (not my favorite way of doing this, but it will have to suffice)
+		for (Component c : textField.getRootPane().getContentPane().getComponents())
+		{
+			if (c instanceof GraphPanel)
+			{
+				c.repaint();
+				break;
+			}
 		}
 	}
 }

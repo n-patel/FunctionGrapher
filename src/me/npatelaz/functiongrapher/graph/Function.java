@@ -19,7 +19,7 @@ import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
 public class Function
 {
 	private JPanel p;
-	private Expr expression;
+	private static Expr expression;
 
 	/**
 	 * Constructor to set the expression
@@ -58,11 +58,11 @@ public class Function
 	}
 
 
-	public void setExpression(String expression)
+	public static void setExpression(String expression)
 	{
 		try
 		{
-			this.expression = Parser.parse(expression);
+			Function.expression = Parser.parse(expression);
 		}
 		catch (SyntaxException e)
 		{
@@ -77,8 +77,14 @@ public class Function
 	 * @param x         x-value used to calculate y-value
 	 * @return          y-value
 	 */
-	private double getValue(double x)
+	private static double getValue(double x)
 	{
+		System.out.println(expression);
+		if (expression == null)
+		{
+			System.out.println("Set to default");
+			setExpression("x^2");
+		}
 		Variable varX = Variable.make("x");
 		varX.setValue(x);
 		return expression.value();

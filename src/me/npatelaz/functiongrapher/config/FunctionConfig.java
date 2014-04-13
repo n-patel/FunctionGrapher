@@ -26,7 +26,7 @@ public class FunctionConfig extends JPanel
 		function.setActionCommand("FUNCTION");
 
 		add(new JLabel("Function"));
-		add(new JTextField(8), "gapleft 16");
+		add(function, "gapleft 16");
 		add(new JLabel("Color"));
 		add(new JTextField(8), "gapleft 16");
 	}
