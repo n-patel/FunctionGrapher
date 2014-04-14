@@ -28,7 +28,7 @@ public class FunctionConfig extends JPanel
 		function.addActionListener(functionConfigListener);
 		function.setActionCommand("FUNCTION");
 
-		String[] colors = {"RED", "BLUE"};
+		String[] colors = {"BLACK", "BLUE", "CYAN", "DARK_GRAY", "GRAY", "GREEN", "LIGHT_GRAY", "MAGENTA", "ORANGE", "PINK", "RED", "WHITE", "YELLOW"};
 		JComboBox<String> color = new JComboBox<>(colors);
 		color.addActionListener(functionConfigListener);
 		color.setActionCommand("COLOR");
