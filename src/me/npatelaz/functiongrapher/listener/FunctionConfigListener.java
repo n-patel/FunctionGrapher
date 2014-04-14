@@ -3,10 +3,11 @@ package me.npatelaz.functiongrapher.listener;
 import me.npatelaz.functiongrapher.graph.Function;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
-import javax.swing.JTextField;
-import java.awt.Component;
+import javax.swing.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Field;
 
 /**
  * Listens to action commands fired by text fields from the function config panel and updates the graph panel accordingly.
@@ -23,23 +24,37 @@ public class FunctionConfigListener implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String command = e.getActionCommand();
-		JTextField textField = (JTextField)e.getSource();
-		String fieldValue = textField.getText();
-
-		// Set function expression to the value of the text field
+		JComponent component = (JComponent)e.getSource();
 		if (command.equals("FUNCTION"))
 		{
+			JTextField textField = (JTextField)component;
+			String fieldValue = textField.getText();
+
+			// Set function expression to the value of the text field
 			Function.setExpression(fieldValue);
 		}
-
-		// Update the graph panel (not my favorite way of doing this, but it will have to suffice)
-		for (Component c : textField.getRootPane().getContentPane().getComponents())
+		else if (command.equals("COLOR"))
 		{
-			if (c instanceof GraphPanel)
+			JComboBox<String> jComboBox = (JComboBox<String>)component;
+			String fieldValue = (String)jComboBox.getSelectedItem();
+
+			// Convert fieldValue to Color
+			Color color = Color.BLACK;
+			try
 			{
-				c.repaint();
-				break;
+				Field field = Class.forName("java.awt.Color").getField(fieldValue);
+				color = (Color)field.get(null);
 			}
+			catch (Exception exception)
+			{
+				exception.printStackTrace();
+			}
+
+			// Set function color to value of dropdown menu
+			Function.setColor(color);
 		}
+
+		// Update the graph panel
+		GraphPanel.updatePanel(component);
 	}
 }

@@ -1,8 +1,7 @@
 package me.npatelaz.functiongrapher.graph;
 
-import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * JPanel that contains the graph (function and axes).
@@ -28,5 +27,24 @@ public class GraphPanel extends JPanel
 		// Draw the axes
 		Axes axes = new Axes(this);
 		axes.draw(g2);
+	}
+
+
+	/**
+	 * Repaints the GraphPanel
+	 * Not my favorite way of doing this, but it will have to suffice.
+	 *
+	 * @param component     a component within the window in order to get a reference point to obtain the GraphPanel instance
+	 */
+	public static void updatePanel(JComponent component)
+	{
+		for (Component c : component.getRootPane().getContentPane().getComponents())
+		{
+			if (c instanceof GraphPanel)
+			{
+				c.repaint();
+				break;
+			}
+		}
 	}
 }

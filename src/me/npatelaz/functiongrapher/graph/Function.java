@@ -4,6 +4,7 @@ import expr.*;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
@@ -18,6 +19,7 @@ import static me.npatelaz.functiongrapher.util.GraphScalingHelper.*;
  */
 public class Function
 {
+	private static Color color;
 	private static Expr expression;
 
 	private JPanel p;
@@ -39,6 +41,7 @@ public class Function
 	 */
 	public void draw(Graphics2D g2)
 	{
+		g2.setColor(color);
 		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
@@ -49,7 +52,21 @@ public class Function
 			Line2D.Double segment = new Line2D.Double(point1, point2);
 			g2.draw(segment);
 		}
+		g2.setColor(Color.BLACK);
 
+	}
+
+
+	/**
+	 * Sets the color of the function to be graphed
+	 *
+	 * NOTE: Can be accessed statically so that GraphPanel can repaint using the same instance
+	 *
+	 * @param color     color to graph the function in
+	 */
+	public static void setColor(Color color)
+	{
+		Function.color = color;
 	}
 
 

@@ -21,14 +21,21 @@ public class FunctionConfig extends JPanel
 		MigLayout migLayout = new MigLayout("wrap 2");
 		setLayout(migLayout);
 
+		FunctionConfigListener functionConfigListener = new FunctionConfigListener();
+
 		JTextField function = new JTextField(10);
 		function.setHorizontalAlignment(JTextField.CENTER);
-		function.addActionListener(new FunctionConfigListener());
+		function.addActionListener(functionConfigListener);
 		function.setActionCommand("FUNCTION");
+
+		String[] colors = {"RED", "BLUE"};
+		JComboBox<String> color = new JComboBox<>(colors);
+		color.addActionListener(functionConfigListener);
+		color.setActionCommand("COLOR");
 
 		add(new JLabel("Function"));
 		add(function, "gapleft 30");
 		add(new JLabel("Color"));
-		add(new JTextField(10), "gapleft 30");
+		add(color, "gapleft 30");
 	}
 }
