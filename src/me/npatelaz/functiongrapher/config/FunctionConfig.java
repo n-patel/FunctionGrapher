@@ -21,13 +21,13 @@ public class FunctionConfig extends JPanel
 		MigLayout migLayout = new MigLayout("wrap 2");
 		setLayout(migLayout);
 
-		JTextField function = new JTextField(8);
+		JTextField function = new JTextField(10);
 		function.addActionListener(new FunctionConfigListener());
 		function.setActionCommand("FUNCTION");
 
 		add(new JLabel("Function"));
-		add(function, "gapleft 16");
+		add(function, "gapleft 30");
 		add(new JLabel("Color"));
-		add(new JTextField(8), "gapleft 16");
+		add(new JTextField(10), "gapleft 30");
 	}
 }

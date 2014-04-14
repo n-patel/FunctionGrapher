@@ -26,7 +26,7 @@ public class AxesConfig extends JPanel
 		String[] labels = {"XMIN", "XMAX", "XSCL", "YMIN", "YMAX", "YSCL"};
 
         for (String label : labels) {
-            JTextField tf = new JTextField(7);
+            JTextField tf = new JTextField(10);
             tf.addActionListener(axesConfigListener);
             tf.setActionCommand(label);
 

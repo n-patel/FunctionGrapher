@@ -3,8 +3,7 @@ package me.npatelaz.functiongrapher;
 import me.npatelaz.functiongrapher.config.ConfigPanel;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -16,24 +15,41 @@ import java.awt.Dimension;
  */
 public class Main
 {
+	// Window dimension constants
+	public static final int WINDOW_HEIGHT = 600;
+	public static final int WINDOW_WIDTH  = 850;
+	public static final int CONFIG_WIDTH  = 250;
+	public static final int CONFIG_PADDING = 20;
+
+
 	public static void main(String[] args)
 	{
+		// Set the Metal (crossplatform) look & feel
+		try
+		{
+			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+		}
+		catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException e)
+		{
+			e.printStackTrace();
+		}
+
 		// Set up frame (main application window)
 		JFrame frame = new JFrame();
 		frame.setTitle("Function Grapher");
-		frame.setSize(850, 600);
+		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		frame.setResizable(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
 		// Set up graph panel
 		GraphPanel graphPanel = new GraphPanel();
-		graphPanel.setPreferredSize(new Dimension(600, 600));
+		graphPanel.setPreferredSize(new Dimension(WINDOW_WIDTH - CONFIG_WIDTH, WINDOW_HEIGHT));
 		frame.add(graphPanel, BorderLayout.CENTER);
 
 		// Set up config panel
 		ConfigPanel configPanel = new ConfigPanel();
-		configPanel.setPreferredSize(new Dimension(250, 600));
+		configPanel.setPreferredSize(new Dimension(CONFIG_WIDTH, WINDOW_HEIGHT));
 		configPanel.initializePanel();
 		frame.add(configPanel, BorderLayout.EAST);
 
