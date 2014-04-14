@@ -22,6 +22,7 @@ public class FunctionConfig extends JPanel
 		setLayout(migLayout);
 
 		JTextField function = new JTextField(10);
+		function.setHorizontalAlignment(JTextField.CENTER);
 		function.addActionListener(new FunctionConfigListener());
 		function.setActionCommand("FUNCTION");
 

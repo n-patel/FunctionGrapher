@@ -27,7 +27,8 @@ public class AxesConfig extends JPanel
 
         for (String label : labels) {
             JTextField tf = new JTextField(10);
-            tf.addActionListener(axesConfigListener);
+	        tf.setHorizontalAlignment(JTextField.CENTER);
+	        tf.addActionListener(axesConfigListener);
             tf.setActionCommand(label);
 
             add(new JLabel(label));
