@@ -26,42 +26,45 @@ public class FunctionConfigListener implements ActionListener
 		String command = e.getActionCommand();
 		JComponent component = (JComponent)e.getSource();
 
-		if (command.equals("FUNCTION"))
+		switch (command)
 		{
-			JTextField textField = (JTextField)component;
-			String fieldValue = textField.getText();
-
-			// Set function expression to the value of the text field
-			Function.setExpression(fieldValue);
-		}
-		else if (command.equals("COLOR"))
-		{
-			JComboBox<String> jComboBox = (JComboBox<String>)component;
-			String fieldValue = ((String)jComboBox.getSelectedItem()).toUpperCase();
-
-			// Convert fieldValue to a color using reflection
-			// Solution found here: http://stackoverflow.com/a/2854058
-			Color color = Color.BLACK;
-			try
+			case "FUNCTION":
 			{
-				Field field = Class.forName("java.awt.Color").getField(fieldValue);
-				color = (Color)field.get(null);
+				JTextField textField = (JTextField)component;
+				String fieldValue = textField.getText();
+
+				// Set function expression to the value of the text field
+				Function.setExpression(fieldValue);
+				break;
 			}
-			catch (Exception exception)
+			case "COLOR":
 			{
-				exception.printStackTrace();
+				JComboBox<String> jComboBox = (JComboBox<String>)component;
+				String fieldValue = ((String)jComboBox.getSelectedItem()).toUpperCase();
+
+				// Convert fieldValue to a color using reflection
+				// Solution found here: http://stackoverflow.com/a/2854058
+				Color color = Color.BLACK;
+				try {
+					Field field = Class.forName("java.awt.Color").getField(fieldValue);
+					color = (Color)field.get(null);
+				} catch (Exception exception) {
+					exception.printStackTrace();
+				}
+
+				// Set function color to value of dropdown menu
+				Function.setColor(color);
+				break;
 			}
+			case "BRUSHSTROKE":
+			{
+				JTextField textField = (JTextField)component;
+				float fieldValue = Float.parseFloat(textField.getText());
 
-			// Set function color to value of dropdown menu
-			Function.setColor(color);
-		}
-		else if (command.equals("BRUSHSTROKE"))
-		{
-			JTextField textField = (JTextField)component;
-			float fieldValue = Float.parseFloat(textField.getText());
-
-			// Set brushstroke thickness to the value of the text field
-			Function.setBrushstroke(fieldValue);
+				// Set brushstroke thickness to the value of the text field
+				Function.setBrushstroke(fieldValue);
+				break;
+			}
 		}
 
 		// Update the graph panel
