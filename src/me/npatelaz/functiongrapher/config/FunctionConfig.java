@@ -23,19 +23,23 @@ public class FunctionConfig extends JPanel
 
 		FunctionConfigListener functionConfigListener = new FunctionConfigListener();
 
+		// Create the function text field
 		JTextField function = new JTextField(10);
 		function.setHorizontalAlignment(JTextField.CENTER);
 		function.addActionListener(functionConfigListener);
 		function.setActionCommand("FUNCTION");
 
-		String[] colors = {"BLACK", "BLUE", "CYAN", "DARK_GRAY", "GRAY", "GREEN", "LIGHT_GRAY", "MAGENTA", "ORANGE", "PINK", "RED", "WHITE", "YELLOW"};
+		// Create the dropdown menu
+		String[] colors = {"Black", "Blue", "Cyan", "Dark_Gray", "Gray", "Green", "Light_Gray", "Magenta", "Orange", "Pink", "Red", "White", "Yellow"};
 		JComboBox<String> color = new JComboBox<>(colors);
 		color.addActionListener(functionConfigListener);
 		color.setActionCommand("COLOR");
 
+		// Add the components
 		add(new JLabel("Function"));
 		add(function, "gapleft 30");
 		add(new JLabel("Color"));
 		add(color, "gapleft 30");
 	}
+	
 }

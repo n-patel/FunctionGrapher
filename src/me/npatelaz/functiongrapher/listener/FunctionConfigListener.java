@@ -25,6 +25,7 @@ public class FunctionConfigListener implements ActionListener
 	{
 		String command = e.getActionCommand();
 		JComponent component = (JComponent)e.getSource();
+
 		if (command.equals("FUNCTION"))
 		{
 			JTextField textField = (JTextField)component;
@@ -36,9 +37,10 @@ public class FunctionConfigListener implements ActionListener
 		else if (command.equals("COLOR"))
 		{
 			JComboBox<String> jComboBox = (JComboBox<String>)component;
-			String fieldValue = (String)jComboBox.getSelectedItem();
+			String fieldValue = ((String)jComboBox.getSelectedItem()).toUpperCase();
 
-			// Convert fieldValue to Color
+			// Convert fieldValue to a color using reflection
+			// Solution found here: http://stackoverflow.com/a/2854058
 			Color color = Color.BLACK;
 			try
 			{
@@ -57,4 +59,5 @@ public class FunctionConfigListener implements ActionListener
 		// Update the graph panel
 		GraphPanel.updatePanel(component);
 	}
+
 }
