@@ -18,7 +18,7 @@ public class ConfigPanel extends JPanel
 	// Panel height constants
 	// Note: These numbers were chosen based on how large the panels actually where. Because they will always be the same width,
 	//       they can have a constant height without the need to worry about resizing/scaling.
-	private int FUNCTION_PANEL_HEIGHT = 100;
+	private int FUNCTION_PANEL_HEIGHT = 115;
 	private int AXES_PANEL_HEIGHT     = 185;
 
 

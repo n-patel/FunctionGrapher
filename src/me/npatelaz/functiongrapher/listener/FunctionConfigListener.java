@@ -55,6 +55,14 @@ public class FunctionConfigListener implements ActionListener
 			// Set function color to value of dropdown menu
 			Function.setColor(color);
 		}
+		else if (command.equals("BRUSHSTROKE"))
+		{
+			JTextField textField = (JTextField)component;
+			float fieldValue = Float.parseFloat(textField.getText());
+
+			// Set brushstroke thickness to the value of the text field
+			Function.setBrushstroke(fieldValue);
+		}
 
 		// Update the graph panel
 		GraphPanel.updatePanel(component);

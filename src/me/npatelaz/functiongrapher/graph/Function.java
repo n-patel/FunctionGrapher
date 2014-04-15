@@ -4,8 +4,7 @@ import expr.*;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
@@ -21,6 +20,7 @@ public class Function
 {
 	private static Color color;
 	private static Expr expression;
+	private static float thickness;
 
 	private JPanel p;
 
@@ -42,6 +42,7 @@ public class Function
 	public void draw(Graphics2D g2)
 	{
 		g2.setColor(color);
+		g2.setStroke(new BasicStroke(thickness));
 		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
@@ -53,7 +54,7 @@ public class Function
 			g2.draw(segment);
 		}
 		g2.setColor(Color.BLACK);
-
+		g2.setStroke(new BasicStroke(1.0F));
 	}
 
 
@@ -70,6 +71,17 @@ public class Function
 	}
 
 
+	/**
+	 * Sets the brushstroke of the function to be graphed
+	 *
+	 * NOTE: Can be accessed statically so that GraphPanel can repaint using the same instance
+	 *
+	 * @param thickness     thickness of brushstroke
+	 */
+	public static void setBrushstroke(float thickness)
+	{
+		Function.thickness = thickness;
+	}
 	/**
 	 * Sets the expression to be graphed
 	 *

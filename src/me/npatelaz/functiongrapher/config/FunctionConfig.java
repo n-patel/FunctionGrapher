@@ -35,11 +35,19 @@ public class FunctionConfig extends JPanel
 		color.addActionListener(functionConfigListener);
 		color.setActionCommand("COLOR");
 
+		// Create the brushstroke text field
+		JTextField brushstroke = new JTextField(10);
+		brushstroke.setHorizontalAlignment(JTextField.CENTER);
+		brushstroke.addActionListener(functionConfigListener);
+		brushstroke.setActionCommand("BRUSHSTROKE");
+
 		// Add the components
 		add(new JLabel("Function"));
 		add(function, "gapleft 30");
 		add(new JLabel("Color"));
 		add(color, "gapleft 30");
+		add(new JLabel("Brushstroke"));
+		add(brushstroke, "gapleft 30");
 	}
-	
+
 }
