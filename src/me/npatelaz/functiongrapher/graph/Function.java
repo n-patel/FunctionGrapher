@@ -51,6 +51,14 @@ public class Function
 			Point2D.Double point2 = new Point2D.Double(xPixel(x+d, p),
 													   yPixel(getValue(x+d), p));
 			Line2D.Double segment = new Line2D.Double(point1, point2);
+
+			// Skip drawing the segment if it extends both below and above the window (this is a discontinuity in almost all normal cases)
+			if ((point1.getY() > yPixel(getYMIN(),p) && point2.getY() < yPixel(getYMAX(), p)) ||
+			    (point2.getY() > yPixel(getYMIN(),p) && point1.getY() < yPixel(getYMAX(),p)))
+			{
+				continue;
+			}
+
 			g2.draw(segment);
 		}
 		g2.setColor(Color.BLACK);
