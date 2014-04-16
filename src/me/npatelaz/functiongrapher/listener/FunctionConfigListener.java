@@ -21,6 +21,7 @@ public class FunctionConfigListener implements ActionListener
 	 * Listens to action commands fired by text fields from the function config panel and updates the graph panel accordingly
 	 * @param e     ActionEvent that was fired
 	 */
+	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		String command = e.getActionCommand();

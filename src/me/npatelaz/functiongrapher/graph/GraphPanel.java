@@ -15,6 +15,7 @@ public class GraphPanel extends JPanel
 	 * Draws the function and the axes on the panel
 	 * @param g     Graphics instance for drawing
 	 */
+	@Override
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
