@@ -35,10 +35,8 @@ public class Main
 		}
 
 		// Set up frame (main application window)
-		JFrame frame = new JFrame();
-		frame.setTitle("Function Grapher");
+		JFrame frame = new JFrame("Function Grapher");
 		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		frame.setResizable(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
