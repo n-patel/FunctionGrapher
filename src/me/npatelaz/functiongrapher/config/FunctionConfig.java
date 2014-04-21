@@ -12,6 +12,10 @@ import javax.swing.*;
  */
 public class FunctionConfig extends JPanel
 {
+	private JTextField function;
+	private JComboBox<String> color;
+	private JTextField brushstroke;
+
 	/**
 	 * Initializes the JPanel with the function configuration fields
 	 */
@@ -20,19 +24,19 @@ public class FunctionConfig extends JPanel
 		FunctionConfigListener functionConfigListener = new FunctionConfigListener();
 
 		// Create the function text field
-		JTextField function = new JTextField(10);
+		function = new JTextField(10);
 		function.setHorizontalAlignment(JTextField.CENTER);
 		function.addActionListener(functionConfigListener);
 		function.setActionCommand("FUNCTION");
 
 		// Create the dropdown menu
 		String[] colors = {"Black", "Blue", "Cyan", "Dark_Gray", "Gray", "Green", "Light_Gray", "Magenta", "Orange", "Pink", "Red", "White", "Yellow"};
-		JComboBox<String> color = new JComboBox<>(colors);
+		color = new JComboBox<>(colors);
 		color.addActionListener(functionConfigListener);
 		color.setActionCommand("COLOR");
 
 		// Create the brushstroke text field
-		JTextField brushstroke = new JTextField(10);
+		brushstroke = new JTextField(10);
 		brushstroke.setHorizontalAlignment(JTextField.CENTER);
 		brushstroke.addActionListener(functionConfigListener);
 		brushstroke.setActionCommand("BRUSHSTROKE");
@@ -44,6 +48,42 @@ public class FunctionConfig extends JPanel
 		add(color, "gapleft 15");
 		add(new JLabel("Brushstroke"));
 		add(brushstroke, "gapleft 15");
+	}
+
+
+	public String getColor()
+	{
+		return (String)color.getSelectedItem();
+	}
+
+
+	public void setColor(JComboBox<String> color)
+	{
+		// TODO
+	}
+
+
+	public String getFunction()
+	{
+		return (String)function.getText();
+	}
+
+
+	public void setFunction(String function)
+	{
+		this.function.setText(function);
+	}
+
+
+	public float getBrushstroke()
+	{
+		return Float.parseFloat(brushstroke.getText());
+	}
+
+
+	public void setBrushstroke(float brushstroke)
+	{
+		this.brushstroke.setText("" + brushstroke);
 	}
 
 }
