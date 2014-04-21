@@ -22,6 +22,7 @@ public class ConfigPanel extends JPanel
 	//       they can have a constant height without the need to worry about resizing/scaling.
 	private int FUNCTION_PANEL_HEIGHT = 115;
 	private int AXES_PANEL_HEIGHT     = 185;
+	private int WOLFRAM_PANEL_HEIGHT  = 255;
 
 
 	/**
@@ -44,5 +45,11 @@ public class ConfigPanel extends JPanel
 		axesConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT));
 		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
 		add(axesConfig);
+
+		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay("y=x^2");
+		wolframAlphaDisplay.initializePanel();
+		wolframAlphaDisplay.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT));
+		wolframAlphaDisplay.setBorder(BorderFactory.createTitledBorder("Wolfram Alpha"));
+		add(wolframAlphaDisplay);
 	}
 }
