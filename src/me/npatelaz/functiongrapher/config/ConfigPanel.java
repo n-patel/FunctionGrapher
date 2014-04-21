@@ -37,7 +37,6 @@ public class ConfigPanel extends JPanel
 		functionConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT));
 		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
 		functionConfig.setFunction("x^2");
-		functionConfig.setBrushstroke(2.0F);
 		add(functionConfig);
 
 		// Initialize and add the axes configuration panel
@@ -48,7 +47,8 @@ public class ConfigPanel extends JPanel
 		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
 		add(axesConfig);
 
-		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay("y=x^2");
+		String functionText = functionConfig.getFunction();
+		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay("y=" + functionText);
 		wolframAlphaDisplay.initializePanel();
 		wolframAlphaDisplay.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT));
 		wolframAlphaDisplay.setBorder(BorderFactory.createTitledBorder("Wolfram Alpha"));
