@@ -1,7 +1,6 @@
 package me.npatelaz.functiongrapher.config;
 
 import me.npatelaz.functiongrapher.listener.FunctionConfigListener;
-import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 
@@ -18,9 +17,6 @@ public class FunctionConfig extends JPanel
 	 */
 	public void initializePanel()
 	{
-		MigLayout migLayout = new MigLayout("wrap 2");
-		setLayout(migLayout);
-
 		FunctionConfigListener functionConfigListener = new FunctionConfigListener();
 
 		// Create the function text field
@@ -43,11 +39,11 @@ public class FunctionConfig extends JPanel
 
 		// Add the components
 		add(new JLabel("Function"));
-		add(function, "gapleft 30");
+		add(function, "gapleft 15");
 		add(new JLabel("Color"));
-		add(color, "gapleft 30");
+		add(color, "gapleft 15");
 		add(new JLabel("Brushstroke"));
-		add(brushstroke, "gapleft 30");
+		add(brushstroke, "gapleft 15");
 	}
 
 }

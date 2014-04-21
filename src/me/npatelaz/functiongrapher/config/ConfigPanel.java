@@ -1,5 +1,7 @@
 package me.npatelaz.functiongrapher.config;
 
+import net.miginfocom.swing.MigLayout;
+
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import java.awt.Dimension;
@@ -29,6 +31,7 @@ public class ConfigPanel extends JPanel
 	{
 		// Initialize and add the function configuration panel
 		FunctionConfig functionConfig = new FunctionConfig();
+		functionConfig.setLayout(new MigLayout("wrap 2"));
 		functionConfig.initializePanel();
 		functionConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT));
 		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
@@ -36,6 +39,7 @@ public class ConfigPanel extends JPanel
 
 		// Initialize and add the axes configuration panel
 		AxesConfig axesConfig = new AxesConfig();
+		axesConfig.setLayout(new MigLayout("wrap 2"));
 		axesConfig.initializePanel();
 		axesConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT));
 		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
