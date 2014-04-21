@@ -37,6 +37,7 @@ public class ConfigPanel extends JPanel
 		functionConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT));
 		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
 		functionConfig.setFunction("x^2");
+		functionConfig.setColor("ORANGE");
 		add(functionConfig);
 
 		// Initialize and add the axes configuration panel

@@ -57,7 +57,7 @@ public class FunctionConfig extends JPanel
 	}
 
 
-	public void setColor(JComboBox<String> color)
+	public void setColor(String color)
 	{
 		// TODO
 	}
