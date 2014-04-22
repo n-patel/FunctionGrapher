@@ -39,12 +39,15 @@ public class GraphPanel extends JPanel
 	 */
 	public static void updatePanel(JComponent component)
 	{
-		for (Component c : component.getRootPane().getContentPane().getComponents())
+		if (component.getRootPane() != null)
 		{
-			if (c instanceof GraphPanel)
+			for (Component c : component.getRootPane().getContentPane().getComponents())
 			{
-				c.repaint();
-				break;
+				if (c instanceof GraphPanel)
+				{
+					c.repaint();
+					break;
+				}
 			}
 		}
 	}
