@@ -1,6 +1,7 @@
 package me.npatelaz.functiongrapher.graph;
 
 import expr.*;
+import me.npatelaz.functiongrapher.util.FunctionColor;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -73,9 +74,26 @@ public class Function
 	 *
 	 * @param color     color to graph the function in
 	 */
-	public static void setColor(Color color)
+	public static void setColor(FunctionColor color)
 	{
-		Function.color = color;
+		switch (color)
+		{
+			case BLACK:         Function.color = Color.BLACK;       break;
+			case BLUE:          Function.color = Color.BLUE;        break;
+			case CYAN:          Function.color = Color.CYAN;        break;
+			case DARK_GRAY:     Function.color = Color.DARK_GRAY;   break;
+			case GRAY:          Function.color = Color.GRAY;        break;
+			case GREEN:         Function.color = Color.GREEN;       break;
+			case LIGHT_GRAY:    Function.color = Color.LIGHT_GRAY;  break;
+			case MAGENTA:       Function.color = Color.MAGENTA;     break;
+			case ORANGE:        Function.color = Color.ORANGE;      break;
+			case PINK:          Function.color = Color.PINK;        break;
+			case RED:           Function.color = Color.RED;         break;
+			case WHITE:         Function.color = Color.WHITE;       break;
+			case YELLOW:        Function.color = Color.YELLOW;      break;
+			default:            Function.color = Color.BLACK;       break;
+
+		}
 	}
 
 
