@@ -69,8 +69,7 @@ public class GraphScalingHelper
 
 
     /**
-     * Gets the XMIN value (lowest x-coordinate)
-     * @return XMIN
+     * @return XMIN     XMIN value (lowest x-coordinate)
      */
     public static int getXMIN()
     {
@@ -79,8 +78,7 @@ public class GraphScalingHelper
 
 
     /**
-     * Sets the XMIN value (lowest x-coordinate)
-     * @param XMIN
+     * @param XMIN      XMIN value (lowest x-coordinate) to set
      */
     public static void setXMIN(int XMIN)
     {
@@ -89,8 +87,7 @@ public class GraphScalingHelper
 
 
     /**
-     * Gets the XMAX value (highest x-coordinate)
-     * @return XMAX
+     * @return XMAX     XMAX value (highest x-coordinate)
      */
     public static int getXMAX()
     {
@@ -99,7 +96,7 @@ public class GraphScalingHelper
 
 
     /**
-	 * Sets the XMAX value (highest x-coordinate)
+	 * Sets the XMAX value (highest x-coordinate) to set
 	 * @param XMAX
 	 */
 	public static void setXMAX(int XMAX)
@@ -109,8 +106,7 @@ public class GraphScalingHelper
 
 
     /**
-     * Gets the YMIN value (lowest y-coordinate)
-     * @return YMIN
+     * @return YMIN     YMIN value (lowest y-coordinate)
      */
     public static int getYMIN()
     {
@@ -119,8 +115,7 @@ public class GraphScalingHelper
 
 
     /**
-	 * Sets the YMIN value (lowest y-coordinate)
-	 * @param YMIN
+	 * @param YMIN      YMIN value (lowest y-coordinate) to set
 	 */
 	public static void setYMIN(int YMIN)
 	{
@@ -129,8 +124,7 @@ public class GraphScalingHelper
 
 
     /**
-     * Gets the YMAX value (highest y-coordinate)
-     * @return YMAX
+     * @return YMAX     YMAX value (highest y-coordinate)
      */
     public static int getYMAX()
     {
@@ -139,8 +133,7 @@ public class GraphScalingHelper
 
 
     /**
-	 * Sets the YMAX value (highest y-coordinate)
-	 * @param YMAX
+	 * @param YMAX      YMAX value (highest y-coordinate) to set
 	 */
 	public static void setYMAX(int YMAX)
 	{
@@ -149,8 +142,7 @@ public class GraphScalingHelper
 
 
 	/**
-	 * Gets the XSCL value (x-axis scaling)
-	 * @return XSCL
+	 * @return XSCL     XSCL value (x-axis scaling)
 	 */
     public static int getXSCL()
     {
@@ -159,8 +151,7 @@ public class GraphScalingHelper
 
 
 	/**
-	 * Sets the XSCL value (x-axis scaling)
-	 * @param XSCL
+	 * @param XSCL      XSCL value (x-axis scaling) to set
 	 */
     public static void setXSCL(int XSCL)
     {
@@ -169,8 +160,7 @@ public class GraphScalingHelper
 
 
 	/**
-	 * Gets the YSCL value (y-axis scaling)
-	 * @return YSCL
+	 * @return YSCL     YSCL value (y-axis scaling)
 	 */
     public static int getYSCL()
     {
@@ -179,8 +169,7 @@ public class GraphScalingHelper
 
 
 	/**
-	 * Sets the YSCL value (y-axis scaling)
-	 * @param YSCL
+	 * @param YSCL      YSCL value (y-axis scaling) to set
 	 */
     public static void setYSCL(int YSCL)
     {

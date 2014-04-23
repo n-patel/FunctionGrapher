@@ -47,6 +47,7 @@ public class ConfigPanel extends JPanel
 		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
 		add(axesConfig);
 
+		// Initialize and add the Wolfram Alpha query panel
 		String functionText = functionConfig.getFunction();
 		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay("y=" + functionText);
 		wolframAlphaDisplay.initializePanel();

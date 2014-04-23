@@ -51,36 +51,53 @@ public class FunctionConfig extends JPanel
 	}
 
 
+	/**
+	 * @return color text field
+	 */
 	public FunctionColor getColor()
 	{
 		return (FunctionColor)color.getSelectedItem();
 	}
 
-
+	/**
+	 * @param color     color text field to set
+	 */
 	public void setColor(FunctionColor color)
 	{
 		this.color.setSelectedItem(color);
 	}
 
 
+	/**
+	 * @return function text field
+	 */
 	public String getFunction()
 	{
 		return function.getText();
 	}
 
 
+	/**
+	 * @param function      function text field to set
+	 */
 	public void setFunction(String function)
 	{
 		this.function.setText(function);
 	}
 
 
+	/**
+	 * @return brushstroke text field
+	 */
 	public float getBrushstroke()
 	{
 		return Float.parseFloat(brushstroke.getText());
 	}
 
 
+	/**
+	 * @param brushstroke       brushstroke text field to set
+	 */
 	public void setBrushstroke(float brushstroke)
 	{
 		this.brushstroke.setText("" + brushstroke);
