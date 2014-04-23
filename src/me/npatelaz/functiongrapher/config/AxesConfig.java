@@ -48,62 +48,62 @@ public class AxesConfig extends JPanel
 
 	}
 
-	public String getXmin()
+	public String getXminField()
 	{
 		return xmin.getText();
 	}
 
-	public void setXmin(String xmin)
+	public void setXminField(String xmin)
 	{
 		System.out.println(this.xmin);
 		this.xmin.setText(xmin);
 	}
 
-	public String getXmax()
+	public String getXmaxField()
 	{
 		return xmax.getText();
 	}
 
-	public void setXmax(String xmax)
+	public void setXmaxField(String xmax)
 	{
 		System.out.println(this.xmax);
 		this.xmax.setText(xmax);
 	}
 
-	public String getXscl()
+	public String getXsclField()
 	{
 		return xscl.getText();
 	}
 
-	public void setXscl(String xscl)
+	public void setXsclField(String xscl)
 	{
 		this.xscl.setText(xscl);
 	}
 
-	public String getYmin() {
+	public String getYminField() {
 		return ymin.getText();
 	}
 
-	public void setYmin(String ymin)
+	public void setYminField(String ymin)
 	{
 		this.ymin.setText(ymin);
 	}
 
-	public String getYmax() {
+	public String getYmaxField() {
 		return ymax.getText();
 	}
 
-	public void setYmax(String ymax)
+	public void setYmaxField(String ymax)
 	{
 		this.ymax.setText(ymax);
 	}
 
-	public String getYscl()
+	public String getYsclField()
 	{
 		return yscl.getText();
 	}
 
-	public void setYscl(String yscl)
+	public void setYsclField(String yscl)
 	{
 		this.yscl.setText(yscl);
 	}
