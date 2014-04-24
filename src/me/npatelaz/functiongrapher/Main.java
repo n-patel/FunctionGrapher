@@ -1,9 +1,11 @@
 package me.npatelaz.functiongrapher;
 
 import me.npatelaz.functiongrapher.config.ConfigPanel;
+import me.npatelaz.functiongrapher.config.FileIO;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -25,14 +27,14 @@ public class Main
 	public static void main(String[] args)
 	{
 		// Set the Metal (crossplatform) look & feel
-		try
-		{
-			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-		}
-		catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException e)
-		{
-			e.printStackTrace();
-		}
+//		try
+//		{
+//			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+//		}
+//		catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException e)
+//		{
+//			e.printStackTrace();
+//		}
 
 		// Set up frame (main application window)
 		JFrame frame = new JFrame("Function Grapher");
@@ -46,9 +48,21 @@ public class Main
 		frame.add(graphPanel, BorderLayout.CENTER);
 
 		// Set up config panel
-		ConfigPanel configPanel = new ConfigPanel();
+		FileIO fileIO = new FileIO();
+		Object object = fileIO.readFromFile("default.xml");
+		ConfigPanel configPanel;
+
+		if (object instanceof ConfigPanel)
+		{
+			configPanel = (ConfigPanel)object;
+		}
+		else
+		{
+			configPanel = new ConfigPanel();
+			configPanel.initializePanel();
+		}
+
 		configPanel.setPreferredSize(new Dimension(CONFIG_WIDTH, WINDOW_HEIGHT));
-		configPanel.initializePanel();
 		frame.add(configPanel, BorderLayout.EAST);
 
 		frame.pack();
