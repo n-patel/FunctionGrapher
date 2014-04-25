@@ -5,7 +5,6 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import java.awt.Dimension;
-import java.io.Serializable;
 
 import static me.npatelaz.functiongrapher.Main.CONFIG_PADDING;
 import static me.npatelaz.functiongrapher.Main.CONFIG_WIDTH;
@@ -16,7 +15,7 @@ import static me.npatelaz.functiongrapher.Main.CONFIG_WIDTH;
  * Nikhil Patel
  * File created on Apr 07, 2014
  */
-public class ConfigPanel extends JPanel implements Serializable
+public class ConfigPanel extends JPanel
 {
 	// Panel height constants
 	// Note: These numbers were chosen based on how large the panels actually where. Because they will always be the same width,

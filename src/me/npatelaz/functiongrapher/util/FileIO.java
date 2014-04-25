@@ -1,4 +1,4 @@
-package me.npatelaz.functiongrapher.config;
+package me.npatelaz.functiongrapher.util;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -12,7 +12,7 @@ import java.io.*;
  */
 public class FileIO
 {
-	public void writeToFile(Serializable object, String filePath)
+	public void writeToFile(Object object, String filePath)
 	{
 		try
 		{

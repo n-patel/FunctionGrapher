@@ -1,11 +1,10 @@
 package me.npatelaz.functiongrapher;
 
 import me.npatelaz.functiongrapher.config.ConfigPanel;
-import me.npatelaz.functiongrapher.config.FileIO;
+import me.npatelaz.functiongrapher.util.FileIO;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -27,14 +26,14 @@ public class Main
 	public static void main(String[] args)
 	{
 		// Set the Metal (crossplatform) look & feel
-//		try
-//		{
-//			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-//		}
-//		catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException e)
-//		{
-//			e.printStackTrace();
-//		}
+		try
+		{
+			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+		}
+		catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException e)
+		{
+			e.printStackTrace();
+		}
 
 		// Set up frame (main application window)
 		JFrame frame = new JFrame("Function Grapher");
