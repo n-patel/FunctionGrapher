@@ -12,12 +12,7 @@ import javax.swing.*;
  */
 public class WolframAlphaDisplay extends JPanel
 {
-	private final String input;
-
-	public WolframAlphaDisplay(String input)
-	{
-		this.input = input;
-	}
+	private String input;
 
 	public void initializePanel()
 	{
@@ -29,6 +24,11 @@ public class WolframAlphaDisplay extends JPanel
 
 		String queryResultText = WolframAlphaHelper.query(input);
 		textArea.setText(queryResultText);
+	}
+
+	public void setQuery(String query)
+	{
+		this.input = query;
 	}
 
 }

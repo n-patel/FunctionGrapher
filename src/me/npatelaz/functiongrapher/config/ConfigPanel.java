@@ -48,8 +48,8 @@ public class ConfigPanel extends JPanel
 		add(axesConfig);
 
 		// Initialize and add the Wolfram Alpha query panel
-		String functionText = functionConfig.getFunction();
-		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay("y=" + functionText);
+		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay();
+		wolframAlphaDisplay.setQuery("y=" + functionConfig.getFunction());
 		wolframAlphaDisplay.initializePanel();
 		wolframAlphaDisplay.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT));
 		wolframAlphaDisplay.setBorder(BorderFactory.createTitledBorder("Wolfram Alpha"));
