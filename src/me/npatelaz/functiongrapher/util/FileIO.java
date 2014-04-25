@@ -1,7 +1,6 @@
 package me.npatelaz.functiongrapher.util;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
+import java.beans.*;
 import java.io.*;
 
 /**
@@ -17,6 +16,14 @@ public class FileIO
 		try
 		{
 			XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filePath)));
+			xmlEncoder.setExceptionListener(new ExceptionListener()
+			{
+				@Override
+				public void exceptionThrown(Exception e)
+				{
+					e.printStackTrace(System.out);
+				}
+			});
 			xmlEncoder.writeObject(object);
 			xmlEncoder.close();
 		}
@@ -32,6 +39,14 @@ public class FileIO
 		try
 		{
 			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(filePath)));
+			xmlDecoder.setExceptionListener(new ExceptionListener()
+			{
+				@Override
+				public void exceptionThrown(Exception e)
+				{
+					e.printStackTrace(System.out);
+				}
+			});
 			object = xmlDecoder.readObject();
 			xmlDecoder.close();
 		}
