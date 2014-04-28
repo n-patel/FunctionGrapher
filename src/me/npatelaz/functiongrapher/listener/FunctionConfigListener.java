@@ -2,9 +2,9 @@ package me.npatelaz.functiongrapher.listener;
 
 import me.npatelaz.functiongrapher.graph.Function;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
-import me.npatelaz.functiongrapher.util.FunctionColor;
 
 import javax.swing.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,8 +39,8 @@ public class FunctionConfigListener implements ActionListener
 			}
 			case "COLOR":
 			{
-				JComboBox<FunctionColor> jComboBox = (JComboBox<FunctionColor>)component;
-				FunctionColor jComboBoxSelectedItem = (FunctionColor)jComboBox.getSelectedItem();
+				JComboBox<Color> jComboBox = (JComboBox<Color>)component;
+				Color jComboBoxSelectedItem = (Color)jComboBox.getSelectedItem();
 
 				// Set function color to value of dropdown menu
 				Function.setColor(jComboBoxSelectedItem);

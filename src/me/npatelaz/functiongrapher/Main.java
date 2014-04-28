@@ -48,7 +48,7 @@ public class Main
 
 		// Set up config panel
 		FileIO fileIO = new FileIO();
-		Object object = fileIO.readFromFile("default.xml");
+		Object object = null;//fileIO.readFromFile("default.xml");
 		ConfigPanel configPanel;
 
 		if (object instanceof ConfigPanel)

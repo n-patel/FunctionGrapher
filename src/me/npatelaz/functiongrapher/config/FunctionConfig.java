@@ -1,9 +1,11 @@
 package me.npatelaz.functiongrapher.config;
 
 import me.npatelaz.functiongrapher.listener.FunctionConfigListener;
-import me.npatelaz.functiongrapher.util.FunctionColor;
 
 import javax.swing.*;
+import java.awt.Color;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * JPanel that contains the function drawing portion of the in-application configuration.
@@ -14,7 +16,7 @@ import javax.swing.*;
 public class FunctionConfig extends JPanel
 {
 	private JTextField function;
-	private JComboBox<FunctionColor> color;
+	private JComboBox<Color> color;
 	private JTextField brushstroke;
 
 	/**
@@ -31,7 +33,8 @@ public class FunctionConfig extends JPanel
 		function.setActionCommand("FUNCTION");
 
 		// Create the dropdown menu
-		color = new JComboBox<>(FunctionColor.values());
+		List<Color> colors = Arrays.asList(Color.BLACK, Color.BLUE, Color.CYAN, Color.DARK_GRAY, Color.GRAY, Color.GREEN, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE, Color.PINK, Color.RED, Color.WHITE, Color.YELLOW);
+		color = new JComboBox<>((Color[])colors.toArray());     // TODO: Display color strings
 		color.addActionListener(functionConfigListener);
 		color.setActionCommand("COLOR");
 
@@ -54,15 +57,15 @@ public class FunctionConfig extends JPanel
 	/**
 	 * @return color text field
 	 */
-	public FunctionColor getColor()
+	public Color getColor()
 	{
-		return (FunctionColor)color.getSelectedItem();
+		return (Color)color.getSelectedItem();
 	}
 
 	/**
 	 * @param color     color text field to set
 	 */
-	public void setColor(FunctionColor color)
+	public void setColor(Color color)
 	{
 		this.color.setSelectedItem(color);
 	}
