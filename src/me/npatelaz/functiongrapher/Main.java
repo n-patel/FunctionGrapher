@@ -1,8 +1,8 @@
 package me.npatelaz.functiongrapher;
 
 import me.npatelaz.functiongrapher.config.ConfigPanel;
-import me.npatelaz.functiongrapher.util.FileIO;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
+import me.npatelaz.functiongrapher.util.FileIO;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -42,7 +42,7 @@ public class Main
 		frame.setVisible(true);
 
 		// Set up graph panel
-		GraphPanel graphPanel = new GraphPanel();
+		GraphPanel graphPanel = GraphPanel.getInstance();
 		graphPanel.setPreferredSize(new Dimension(WINDOW_WIDTH - CONFIG_WIDTH, WINDOW_HEIGHT));
 		frame.add(graphPanel, BorderLayout.CENTER);
 
@@ -57,7 +57,7 @@ public class Main
 		}
 		else
 		{
-			configPanel = new ConfigPanel();
+			configPanel = ConfigPanel.getInstance();
 			configPanel.initializePanel();
 		}
 
@@ -65,6 +65,8 @@ public class Main
 		frame.add(configPanel, BorderLayout.EAST);
 
 		frame.pack();
+
+		fileIO.writeConfig("text.config");
 
 	}
 }

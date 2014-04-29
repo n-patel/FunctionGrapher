@@ -15,6 +15,18 @@ import java.util.List;
  */
 public class FunctionConfig extends JPanel
 {
+	private static FunctionConfig instance;
+
+	private FunctionConfig() {}
+
+	public static FunctionConfig getInstance()
+	{
+		if (instance == null) {
+			instance = new FunctionConfig();
+		}
+		return instance;
+	}
+
 	private JTextField function;
 	private JComboBox<Color> color;
 	private JTextField brushstroke;
