@@ -87,7 +87,7 @@ public class Function
 			case "MAGENTA":     Function.color = Color.MAGENTA;     break;
 			case "ORANGE":      Function.color = Color.ORANGE;      break;
 			case "PINK":        Function.color = Color.PINK;        break;
-			case "RED":         Function.color = Color.YELLOW;      break;
+			case "RED":         Function.color = Color.RED;         break;
 			case "WHITE":       Function.color = Color.WHITE;       break;
 			case "YELLOW":      Function.color = Color.YELLOW;      break;
 			default:            Function.color = Color.BLACK;       break;
