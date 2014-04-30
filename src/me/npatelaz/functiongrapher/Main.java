@@ -2,10 +2,14 @@ package me.npatelaz.functiongrapher;
 
 import me.npatelaz.functiongrapher.config.ConfigPanel;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
+import me.npatelaz.functiongrapher.util.FileIO;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 /**
  * An application which graphs function. TODO: insert continued description here
@@ -50,6 +54,18 @@ public class Main
 		configPanel.initializePanel();
 		configPanel.setPreferredSize(new Dimension(CONFIG_WIDTH, WINDOW_HEIGHT));
 		frame.add(configPanel, BorderLayout.EAST);
+
+		// Fill config panel with default values
+		FileIO fileIO = new FileIO();
+		URL url = ClassLoader.class.getResource("/resources/default.properties");
+		try
+		{
+			fileIO.readConfig(new File(url.toURI()));
+		}
+		catch (URISyntaxException e)
+		{
+			e.printStackTrace();
+		}
 
 		frame.pack();
 
