@@ -3,7 +3,6 @@ package me.npatelaz.functiongrapher.util;
 import me.npatelaz.functiongrapher.config.AxesConfig;
 import me.npatelaz.functiongrapher.config.FunctionConfig;
 
-import java.awt.Color;
 import java.io.*;
 import java.util.Properties;
 
@@ -33,7 +32,7 @@ public class FileIO
 
 			// Set fields to property values
 			FunctionConfig.getInstance().setFunction(properties.getProperty("function"));
-			FunctionConfig.getInstance().setColor(Color.CYAN);
+			FunctionConfig.getInstance().setColor(properties.getProperty("color"));
 			FunctionConfig.getInstance().setBrushstroke(Float.parseFloat(properties.getProperty("brushstroke")));
 			AxesConfig.getInstance().setXminField(properties.getProperty("xmin"));
 			AxesConfig.getInstance().setXmaxField(properties.getProperty("xmax"));
@@ -63,7 +62,7 @@ public class FileIO
 
 			// Set properties from the form fields
 			properties.setProperty("function",      FunctionConfig.getInstance().getFunction());
-			properties.setProperty("color",         String.valueOf(FunctionConfig.getInstance().getColor()));
+			properties.setProperty("color",         FunctionConfig.getInstance().getColor());
 			properties.setProperty("brushstroke",   String.valueOf(FunctionConfig.getInstance().getBrushstroke()));
 			properties.setProperty("xmin",          AxesConfig.getInstance().getXminField());
 			properties.setProperty("xmax",          AxesConfig.getInstance().getXmaxField());
