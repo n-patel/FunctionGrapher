@@ -3,75 +3,81 @@ package me.npatelaz.functiongrapher.util;
 import me.npatelaz.functiongrapher.config.AxesConfig;
 import me.npatelaz.functiongrapher.config.FunctionConfig;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
+import java.awt.Color;
 import java.io.*;
+import java.util.Properties;
 
 /**
- * Description
+ * Handles reading and writing of the config to a properties file
  *
  * Nikhil Patel
  * File created on Apr 24, 2014
  */
 public class FileIO
 {
-	public void writeToFile(Object object, String filePath)
+	/**
+	 * Read from a config properties file and set fields in application
+	 * @param fileName      file to read from
+	 */
+	public void readConfig(String fileName)
 	{
+		Properties properties = new Properties();
+		InputStream inputStream;
 		try
 		{
-			XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filePath)));
-			xmlEncoder.writeObject(object);
-			xmlEncoder.close();
-		}
-		catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		}
-	}
+			// Open stream to load file
+			inputStream = new FileInputStream(fileName);
 
-	public Object readFromFile(String filePath)
-	{
-		Object object = null;
-		try
-		{
-			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(filePath)));
-			object = xmlDecoder.readObject();
-			xmlDecoder.close();
-		}
-		catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		}
-		return object;
-	}
+			// Load up the properties
+			properties.load(inputStream);
 
-
-	public void writeConfig(String fileName)
-	{
-		String function = FunctionConfig.getInstance().getFunction();
-		String color    = String.valueOf(FunctionConfig.getInstance().getColor());
-		String brush    = String.valueOf(FunctionConfig.getInstance().getBrushstroke());
-		String xmin = AxesConfig.getInstance().getXminField();
-		String xmax = AxesConfig.getInstance().getXmaxField();
-		String xscl = AxesConfig.getInstance().getXsclField();
-		String ymin = AxesConfig.getInstance().getYminField();
-		String ymax = AxesConfig.getInstance().getYmaxField();
-		String yscl = AxesConfig.getInstance().getYsclField();
-
-		String[] values= {function, color, brush, xmin, xmax, xscl, ymin, ymax, yscl};
-
-		try
-		{
-			FileWriter fileWriter = new FileWriter(new File(fileName));
-			for (String s : values)
-			{
-				fileWriter.write(s + "\n");
-			}
-			fileWriter.flush();
-			fileWriter.close();
+			// Set fields to property values
+			FunctionConfig.getInstance().setFunction(properties.getProperty("function"));
+			FunctionConfig.getInstance().setColor(Color.CYAN);
+			FunctionConfig.getInstance().setBrushstroke(Float.parseFloat(properties.getProperty("brushstroke")));
+			AxesConfig.getInstance().setXminField(properties.getProperty("xmin"));
+			AxesConfig.getInstance().setXmaxField(properties.getProperty("xmax"));
+			AxesConfig.getInstance().setXsclField(properties.getProperty("xscl"));
+			AxesConfig.getInstance().setYminField(properties.getProperty("ymin"));
+			AxesConfig.getInstance().setYmaxField(properties.getProperty("ymax"));
+			AxesConfig.getInstance().setYsclField(properties.getProperty("yscl"));
 		}
 		catch (IOException e)
 		{
+			e.printStackTrace();
+		}
+	}
+
+
+	/**
+	 * Writes field values in application to a config properties file
+	 * @param fileName      file to write to
+	 */
+	public void writeConfig(String fileName)
+	{
+		Properties properties = new Properties();
+		OutputStream outputStream;
+		try
+		{
+			outputStream = new FileOutputStream(fileName);
+
+			// Set properties from the form fields
+			properties.setProperty("function",      FunctionConfig.getInstance().getFunction());
+			properties.setProperty("color",         String.valueOf(FunctionConfig.getInstance().getColor()));
+			properties.setProperty("brushstroke",   String.valueOf(FunctionConfig.getInstance().getBrushstroke()));
+			properties.setProperty("xmin",          AxesConfig.getInstance().getXminField());
+			properties.setProperty("xmax",          AxesConfig.getInstance().getXmaxField());
+			properties.setProperty("xscl",          AxesConfig.getInstance().getXsclField());
+			properties.setProperty("ymin",          AxesConfig.getInstance().getYminField());
+			properties.setProperty("ymax",          AxesConfig.getInstance().getYmaxField());
+			properties.setProperty("yscl",          AxesConfig.getInstance().getYsclField());
+
+			// Save file and close stream
+			properties.store(outputStream, null);
+			outputStream.flush();
+			outputStream.close();
+
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
