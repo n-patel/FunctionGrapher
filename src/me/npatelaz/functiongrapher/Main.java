@@ -16,8 +16,8 @@ import java.awt.Dimension;
 public class Main
 {
 	// Window dimension constants
-	public static final int WINDOW_HEIGHT = 600;
-	public static final int WINDOW_WIDTH  = 850;
+	public static final int WINDOW_HEIGHT = 700;
+	public static final int WINDOW_WIDTH  = 950;
 	public static final int CONFIG_WIDTH  = 250;
 	public static final int CONFIG_PADDING = 20;
 

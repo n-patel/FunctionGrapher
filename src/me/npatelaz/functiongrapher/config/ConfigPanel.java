@@ -36,7 +36,7 @@ public class ConfigPanel extends JPanel
 	private static int FUNCTION_PANEL_HEIGHT = 115;
 	private static int AXES_PANEL_HEIGHT     = 185;
 	private static int SAVELOAD_PANEL_HEIGHT = 65;
-	private static int WOLFRAM_PANEL_HEIGHT  = 255;
+	private static int WOLFRAM_PANEL_HEIGHT  = 295;
 
 
 	/**

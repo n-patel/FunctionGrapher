@@ -16,7 +16,7 @@ public class WolframAlphaDisplay extends JPanel
 
 	public void initializePanel()
 	{
-		JTextArea textArea = new JTextArea(13, 18);
+		JTextArea textArea = new JTextArea(16, 18);
 		textArea.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(textArea);
 
