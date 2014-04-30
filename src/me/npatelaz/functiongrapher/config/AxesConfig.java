@@ -89,7 +89,6 @@ public class AxesConfig extends JPanel
 	 */
 	public void setXmaxField(String xmax)
 	{
-		System.out.println(this.xmax);
 		this.xmax.setText(xmax);
 	}
 
