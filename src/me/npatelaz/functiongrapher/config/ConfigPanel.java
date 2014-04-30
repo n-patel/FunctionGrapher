@@ -17,6 +17,19 @@ import static me.npatelaz.functiongrapher.Main.CONFIG_WIDTH;
  */
 public class ConfigPanel extends JPanel
 {
+	private static ConfigPanel instance;
+
+	private ConfigPanel() {}
+
+	public static ConfigPanel getInstance()
+	{
+		if (instance == null) {
+			instance = new ConfigPanel();
+		}
+		return instance;
+	}
+
+
 	// Panel height constants
 	// Note: These numbers were chosen based on how large the panels actually where. Because they will always be the same width,
 	//       they can have a constant height without the need to worry about resizing/scaling.
@@ -31,16 +44,17 @@ public class ConfigPanel extends JPanel
 	public void initializePanel()
 	{
 		// Initialize and add the function configuration panel
-		FunctionConfig functionConfig = new FunctionConfig();
+		FunctionConfig functionConfig = FunctionConfig.getInstance();
 		functionConfig.setLayout(new MigLayout("wrap 2"));
 		functionConfig.initializePanel();
 		functionConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT));
 		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
 		functionConfig.setFunction("x^2");
+		functionConfig.setBrushstroke(1.0F);
 		add(functionConfig);
 
 		// Initialize and add the axes configuration panel
-		AxesConfig axesConfig = new AxesConfig();
+		AxesConfig axesConfig = AxesConfig.getInstance();
 		axesConfig.setLayout(new MigLayout("wrap 2"));
 		axesConfig.initializePanel();
 		axesConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT));

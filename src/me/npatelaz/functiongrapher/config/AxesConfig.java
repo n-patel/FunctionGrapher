@@ -19,6 +19,18 @@ public class AxesConfig extends JPanel
 	private JTextField ymax;
 	private JTextField yscl;
 
+	private static AxesConfig instance;
+
+	private AxesConfig() {}
+
+	public static AxesConfig getInstance()
+	{
+		if (instance == null) {
+			instance = new AxesConfig();
+		}
+		return instance;
+	}
+
 	/**
 	 * Initializes the JPanel with the axes configuration text fields
 	 */

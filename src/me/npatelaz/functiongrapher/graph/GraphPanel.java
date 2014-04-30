@@ -11,6 +11,19 @@ import java.awt.*;
  */
 public class GraphPanel extends JPanel
 {
+	private static GraphPanel instance;
+
+	private GraphPanel() {}
+
+	public static GraphPanel getInstance()
+	{
+		if (instance == null) {
+			instance = new GraphPanel();
+		}
+		return instance;
+	}
+
+
 	/**
 	 * Draws the function and the axes on the panel
 	 * @param g     Graphics instance for drawing
