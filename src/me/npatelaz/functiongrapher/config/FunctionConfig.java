@@ -13,7 +13,7 @@ import java.util.List;
  * Nikhil Patel
  * File created on Apr 07, 2014
  */
-public class FunctionConfig extends JPanel
+public class FunctionConfig extends AbstractPanel
 {
 	private static FunctionConfig instance;
 
@@ -32,9 +32,10 @@ public class FunctionConfig extends JPanel
 	private JTextField brushstroke;
 
 	/**
-	 * Initializes the JPanel with the function configuration fields
+	 * Populates the JPanel with the function configuration fields
 	 */
-	public void initializePanel()
+	@Override
+	public void populate()
 	{
 		FunctionConfigListener functionConfigListener = new FunctionConfigListener();
 

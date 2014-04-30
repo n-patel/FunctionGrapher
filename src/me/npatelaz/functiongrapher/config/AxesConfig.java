@@ -10,7 +10,7 @@ import javax.swing.*;
  * Nikhil Patel
  * File created on Apr 07, 2014
  */
-public class AxesConfig extends JPanel
+public class AxesConfig extends AbstractPanel
 {
 	private JTextField xmin;
 	private JTextField xmax;
@@ -32,9 +32,10 @@ public class AxesConfig extends JPanel
 	}
 
 	/**
-	 * Initializes the JPanel with the axes configuration text fields
+	 * Populates the JPanel with the axes configuration text fields
 	 */
-	public void initializePanel()
+	@Override
+	public void populate()
 	{
 		AxesConfigListener axesConfigListener = new AxesConfigListener();
 

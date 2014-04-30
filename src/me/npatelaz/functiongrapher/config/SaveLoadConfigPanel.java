@@ -3,7 +3,6 @@ package me.npatelaz.functiongrapher.config;
 import me.npatelaz.functiongrapher.listener.SaveLoadConfigListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 /**
  * Description
@@ -11,7 +10,7 @@ import javax.swing.JPanel;
  * Nikhil Patel
  * File created on Apr 29, 2014
  */
-public class SaveLoadConfigPanel extends JPanel
+public class SaveLoadConfigPanel extends AbstractPanel
 {
 	private static SaveLoadConfigPanel instance;
 
@@ -29,7 +28,8 @@ public class SaveLoadConfigPanel extends JPanel
 	JButton save;
 	JButton load;
 
-	public void initializePanel()
+	@Override
+	public void populate()
 	{
 		SaveLoadConfigListener saveLoadConfigListener = new SaveLoadConfigListener();
 

@@ -2,9 +2,9 @@ package me.npatelaz.functiongrapher.config;
 
 import net.miginfocom.swing.MigLayout;
 
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import static me.npatelaz.functiongrapher.Main.CONFIG_PADDING;
 import static me.npatelaz.functiongrapher.Main.CONFIG_WIDTH;
@@ -46,35 +46,24 @@ public class ConfigPanel extends JPanel
 	{
 		// Initialize and add the function configuration panel
 		FunctionConfig functionConfig = FunctionConfig.getInstance();
-		functionConfig.setLayout(new MigLayout("wrap 2"));
-		functionConfig.initializePanel();
-		functionConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT));
-		functionConfig.setBorder(BorderFactory.createTitledBorder("Function Configuration"));
+		functionConfig.initialize("Function Configuration", new Dimension(CONFIG_WIDTH - CONFIG_PADDING, FUNCTION_PANEL_HEIGHT), new MigLayout("wrap 2"));
 		functionConfig.setFunction("x^2");
-		functionConfig.setBrushstroke(1.0F);
 		add(functionConfig);
 
 		// Initialize and add the axes configuration panel
 		AxesConfig axesConfig = AxesConfig.getInstance();
-		axesConfig.setLayout(new MigLayout("wrap 2"));
-		axesConfig.initializePanel();
-		axesConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT));
-		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
+		axesConfig.initialize("Axes Configuration", new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT), new MigLayout("wrap 2"));
 		add(axesConfig);
 
 		// Initialize and add the save/load configuration panel
 		SaveLoadConfigPanel saveLoadConfigPanel = SaveLoadConfigPanel.getInstance();
-		saveLoadConfigPanel.initializePanel();
-		saveLoadConfigPanel.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, SAVELOAD_PANEL_HEIGHT));
-		saveLoadConfigPanel.setBorder(BorderFactory.createTitledBorder("Save/Load Settings"));
+		saveLoadConfigPanel.initialize("Save/Load Configuration", new Dimension(CONFIG_WIDTH - CONFIG_PADDING, SAVELOAD_PANEL_HEIGHT), new FlowLayout());
 		add(saveLoadConfigPanel);
 
 		// Initialize and add the Wolfram Alpha query panel
 		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay();
 		wolframAlphaDisplay.setQuery("y=" + functionConfig.getFunction());
-		wolframAlphaDisplay.initializePanel();
-		wolframAlphaDisplay.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT));
-		wolframAlphaDisplay.setBorder(BorderFactory.createTitledBorder("Wolfram Alpha"));
+		wolframAlphaDisplay.initialize("Wolfram Alpha", new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT), new FlowLayout());
 		add(wolframAlphaDisplay);
 	}
 }

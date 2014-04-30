@@ -10,11 +10,12 @@ import javax.swing.*;
  * Nikhil Patel
  * File created on Apr 17, 2014
  */
-public class WolframAlphaDisplay extends JPanel
+public class WolframAlphaDisplay extends AbstractPanel
 {
 	private String input;
 
-	public void initializePanel()
+	@Override
+	public void populate()
 	{
 		JTextArea textArea = new JTextArea(16, 18);
 		textArea.setEditable(false);
