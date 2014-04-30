@@ -33,9 +33,10 @@ public class ConfigPanel extends JPanel
 	// Panel height constants
 	// Note: These numbers were chosen based on how large the panels actually where. Because they will always be the same width,
 	//       they can have a constant height without the need to worry about resizing/scaling.
-	private int FUNCTION_PANEL_HEIGHT = 115;
-	private int AXES_PANEL_HEIGHT     = 185;
-	private int WOLFRAM_PANEL_HEIGHT  = 255;
+	private static int FUNCTION_PANEL_HEIGHT = 115;
+	private static int AXES_PANEL_HEIGHT     = 185;
+	private static int SAVELOAD_PANEL_HEIGHT = 65;
+	private static int WOLFRAM_PANEL_HEIGHT  = 255;
 
 
 	/**
@@ -60,6 +61,13 @@ public class ConfigPanel extends JPanel
 		axesConfig.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, AXES_PANEL_HEIGHT));
 		axesConfig.setBorder(BorderFactory.createTitledBorder("Axes Configuration"));
 		add(axesConfig);
+
+		// Initialize and add the save/load configuration panel
+		SaveLoadConfigPanel saveLoadConfigPanel = SaveLoadConfigPanel.getInstance();
+		saveLoadConfigPanel.initializePanel();
+		saveLoadConfigPanel.setPreferredSize(new Dimension(CONFIG_WIDTH - CONFIG_PADDING, SAVELOAD_PANEL_HEIGHT));
+		saveLoadConfigPanel.setBorder(BorderFactory.createTitledBorder("Save/Load Settings"));
+		add(saveLoadConfigPanel);
 
 		// Initialize and add the Wolfram Alpha query panel
 		WolframAlphaDisplay wolframAlphaDisplay = new WolframAlphaDisplay();

@@ -17,16 +17,16 @@ public class FileIO
 {
 	/**
 	 * Read from a config properties file and set fields in application
-	 * @param fileName      file to read from
+	 * @param file      file to read from
 	 */
-	public void readConfig(String fileName)
+	public void readConfig(File file)
 	{
 		Properties properties = new Properties();
 		InputStream inputStream;
 		try
 		{
 			// Open stream to load file
-			inputStream = new FileInputStream(fileName);
+			inputStream = new FileInputStream(file);
 
 			// Load up the properties
 			properties.load(inputStream);
@@ -51,15 +51,15 @@ public class FileIO
 
 	/**
 	 * Writes field values in application to a config properties file
-	 * @param fileName      file to write to
+	 * @param file      file to write to
 	 */
-	public void writeConfig(String fileName)
+	public void writeConfig(File file)
 	{
 		Properties properties = new Properties();
 		OutputStream outputStream;
 		try
 		{
-			outputStream = new FileOutputStream(fileName);
+			outputStream = new FileOutputStream(file);
 
 			// Set properties from the form fields
 			properties.setProperty("function",      FunctionConfig.getInstance().getFunction());
