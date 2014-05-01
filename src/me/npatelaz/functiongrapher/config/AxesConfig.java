@@ -75,6 +75,7 @@ public class AxesConfig extends AbstractPanel
 	public void setXminField(String xmin)
 	{
 		this.xmin.setText(xmin);
+		this.xmin.postActionEvent();
 	}
 
 	/**
@@ -91,6 +92,7 @@ public class AxesConfig extends AbstractPanel
 	public void setXmaxField(String xmax)
 	{
 		this.xmax.setText(xmax);
+		this.xmax.postActionEvent();
 	}
 
 	/**
@@ -107,6 +109,7 @@ public class AxesConfig extends AbstractPanel
 	public void setXsclField(String xscl)
 	{
 		this.xscl.setText(xscl);
+		this.xscl.postActionEvent();
 	}
 
 	/**
@@ -122,6 +125,7 @@ public class AxesConfig extends AbstractPanel
 	public void setYminField(String ymin)
 	{
 		this.ymin.setText(ymin);
+		this.ymin.postActionEvent();
 	}
 
 	/**
@@ -137,6 +141,7 @@ public class AxesConfig extends AbstractPanel
 	public void setYmaxField(String ymax)
 	{
 		this.ymax.setText(ymax);
+		this.ymax.postActionEvent();
 	}
 
 	/**
@@ -153,6 +158,7 @@ public class AxesConfig extends AbstractPanel
 	public void setYsclField(String yscl)
 	{
 		this.yscl.setText(yscl);
+		this.yscl.postActionEvent();
 	}
 
 }

@@ -57,7 +57,7 @@ public class FunctionConfigListener implements ActionListener
 		}
 
 		// Update the graph panel
-		GraphPanel.updatePanel(component);
+		GraphPanel.getInstance().repaint();
 	}
 
 }

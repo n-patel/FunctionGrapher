@@ -43,25 +43,4 @@ public class GraphPanel extends JPanel
 		axes.draw(g2);
 	}
 
-
-	/**
-	 * Repaints the GraphPanel
-	 * Not my favorite way of doing this, but it will have to suffice.
-	 *
-	 * @param component     a component within the window in order to get a reference point to obtain the GraphPanel instance
-	 */
-	public static void updatePanel(JComponent component)
-	{
-		if (component.getRootPane() != null)
-		{
-			for (Component c : component.getRootPane().getContentPane().getComponents())
-			{
-				if (c instanceof GraphPanel)
-				{
-					c.repaint();
-					break;
-				}
-			}
-		}
-	}
 }

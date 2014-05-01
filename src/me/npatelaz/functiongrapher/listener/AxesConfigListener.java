@@ -3,7 +3,6 @@ package me.npatelaz.functiongrapher.listener;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
 import javax.swing.JTextField;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,15 +38,8 @@ public class AxesConfigListener implements ActionListener
 			case "YSCL": setYSCL(fieldValue);    break;
 		}
 
-		// Update the graph panel (not my favorite way of doing this, but it will have to suffice)
-		for (Component c : textField.getRootPane().getContentPane().getComponents())
-		{
-			if (c instanceof GraphPanel)
-			{
-				c.repaint();
-				break;
-			}
-		}
+		// Update the graph panel
+		GraphPanel.getInstance().repaint();
 
 	}
 

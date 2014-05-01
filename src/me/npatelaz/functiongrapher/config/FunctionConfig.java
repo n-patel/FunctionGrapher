@@ -97,6 +97,7 @@ public class FunctionConfig extends AbstractPanel
 	public void setFunction(String function)
 	{
 		this.function.setText(function);
+		this.function.postActionEvent();
 	}
 
 
@@ -115,6 +116,7 @@ public class FunctionConfig extends AbstractPanel
 	public void setBrushstroke(float brushstroke)
 	{
 		this.brushstroke.setText("" + brushstroke);
+		this.brushstroke.postActionEvent();
 	}
 
 }
