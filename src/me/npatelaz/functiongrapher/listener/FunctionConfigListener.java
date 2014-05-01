@@ -1,5 +1,6 @@
 package me.npatelaz.functiongrapher.listener;
 
+import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
 import me.npatelaz.functiongrapher.graph.Function;
 import me.npatelaz.functiongrapher.graph.GraphPanel;
 
@@ -34,6 +35,7 @@ public class FunctionConfigListener implements ActionListener
 
 				// Set function expression to the value of the text field
 				Function.setExpression(fieldValue);
+				WolframAlphaDisplay.getInstance().update();
 				break;
 			}
 			case "COLOR":

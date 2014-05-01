@@ -1,5 +1,6 @@
 package me.npatelaz.functiongrapher.config;
 
+import me.npatelaz.functiongrapher.listener.WolframAlphaListener;
 import me.npatelaz.functiongrapher.util.WolframAlphaHelper;
 
 import javax.swing.*;
@@ -12,24 +13,56 @@ import javax.swing.*;
  */
 public class WolframAlphaDisplay extends AbstractPanel
 {
-	private String input;
+	private static WolframAlphaDisplay instance;
+
+	private WolframAlphaDisplay() {}
+
+	public static WolframAlphaDisplay getInstance()
+	{
+		if (instance == null) {
+			instance = new WolframAlphaDisplay();
+		}
+		return instance;
+	}
+
+
+	JTextArea textArea;
+	JButton update;
+	private String query;
 
 	@Override
 	public void populate()
 	{
-		JTextArea textArea = new JTextArea(16, 18);
+		textArea = new JTextArea(13, 18);
 		textArea.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(textArea);
 
-		add(scrollPane);
+		update = new JButton("Update");
+		update.setActionCommand("UPDATE");
+		update.addActionListener(new WolframAlphaListener());
 
-		String queryResultText = WolframAlphaHelper.query(input);
+		add(scrollPane);
+		add(update);
+
+		String queryResultText = WolframAlphaHelper.query(query);
 		textArea.setText(queryResultText);
 	}
 
 	public void setQuery(String query)
 	{
-		this.input = query;
+		this.query = query;
+	}
+
+	public void setResultText(String result)
+	{
+		this.textArea.setText(result);
+	}
+
+	public void update()
+	{
+		if (update != null) {
+			update.doClick();
+		}
 	}
 
 }
