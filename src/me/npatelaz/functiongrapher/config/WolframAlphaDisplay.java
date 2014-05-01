@@ -26,43 +26,59 @@ public class WolframAlphaDisplay extends AbstractPanel
 	}
 
 
-	JTextArea textArea;
-	JButton update;
 	private String query;
 
+	private JTextArea textArea;
+	private JButton update;
+
+	/**
+	 * Populates the JPanel with the text area and update button
+	 */
 	@Override
 	public void populate()
 	{
-		textArea = new JTextArea(13, 18);
+		textArea = new JTextArea(14, 18);
 		textArea.setEditable(false);
-		JScrollPane scrollPane = new JScrollPane(textArea);
 
 		update = new JButton("Update");
 		update.setActionCommand("UPDATE");
 		update.addActionListener(new WolframAlphaListener());
 
-		add(scrollPane);
+		add(new JScrollPane(textArea));
 		add(update);
 
-		String queryResultText = WolframAlphaHelper.query(query);
-		textArea.setText(queryResultText);
+		updateResultText();
 	}
 
+
+	/**
+	 * Sets the text to query Wolfram Alpha with
+	 * @param query     text to query
+	 */
 	public void setQuery(String query)
 	{
 		this.query = query;
 	}
 
-	public void setResultText(String result)
-	{
-		this.textArea.setText(result);
-	}
 
-	public void update()
+	/**
+	 * Updates the result text area by simulating a button press
+	 */
+	public void submitQuery()
 	{
 		if (update != null) {
 			update.doClick();
 		}
+	}
+
+
+	/**
+	 * Updates the result text area
+	 */
+	public void updateResultText()
+	{
+		String queryResultText = WolframAlphaHelper.query(query);
+		textArea.setText(queryResultText);
 	}
 
 }

@@ -35,7 +35,10 @@ public class FunctionConfigListener implements ActionListener
 
 				// Set function expression to the value of the text field
 				Function.setExpression(fieldValue);
-				WolframAlphaDisplay.getInstance().update();
+
+				// Query Wolfram Alpha
+				WolframAlphaDisplay.getInstance().submitQuery();
+
 				break;
 			}
 			case "COLOR":

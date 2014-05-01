@@ -2,13 +2,12 @@ package me.npatelaz.functiongrapher.listener;
 
 import me.npatelaz.functiongrapher.config.FunctionConfig;
 import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
-import me.npatelaz.functiongrapher.util.WolframAlphaHelper;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Description
+ * Listens to action commands fired by text fields from the WolframAlpha panel and updates the query result text accordingly.
  *
  * Nikhil Patel
  * File created on May 01, 2014
@@ -30,13 +29,10 @@ public class WolframAlphaListener implements ActionListener
 			{
 				// Get the function field's text
 				String function = FunctionConfig.getInstance().getFunction();
+
+				// Update the result text area
 				WolframAlphaDisplay.getInstance().setQuery(function);
-
-				// Query Wolfram Alpha
-				String result   = WolframAlphaHelper.query("y=" + function);
-
-				// Set function expression to the value of the text field
-				WolframAlphaDisplay.getInstance().setResultText(result);
+				WolframAlphaDisplay.getInstance().updateResultText();
 
 				break;
 			}

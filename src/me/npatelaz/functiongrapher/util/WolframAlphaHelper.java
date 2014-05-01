@@ -45,7 +45,7 @@ public class WolframAlphaHelper
 			{
 				for (WAPod pod : queryResult.getPods())
 				{
-					if (!pod.isError() && !pod.getTitle().equals("Plot"))
+					if (!pod.isError() && !pod.getTitle().contains("Plot"))
 					{
 						queryResultText += pod.getTitle() + "\n";
 						queryResultText += "------------" + "\n";
