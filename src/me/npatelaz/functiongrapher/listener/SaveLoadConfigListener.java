@@ -5,7 +5,6 @@ import me.npatelaz.functiongrapher.util.FileIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 /**
  * Description
@@ -23,24 +22,38 @@ public class SaveLoadConfigListener implements ActionListener
 		JComponent component = (JComponent)e.getSource();
 
 		FileIO fileIO = new FileIO();
-
 		JFileChooser fileChooser = new JFileChooser();
-		int returnValue = fileChooser.showOpenDialog(component);
 
-		if (returnValue == JFileChooser.APPROVE_OPTION)
+		switch(command)
 		{
-			File file = fileChooser.getSelectedFile();
-			if (command.equals("SAVE"))
+			case "SAVE":
 			{
-				fileIO.writeConfig(file);
-				JOptionPane.showMessageDialog(component, "Configuration saved!");
+				fileChooser.setApproveButtonText("Save");
+				int returnValue = fileChooser.showOpenDialog(component);
+				if (returnValue == JFileChooser.APPROVE_OPTION)
+				{
+					fileIO.storeProperties(fileChooser.getSelectedFile());
+					JOptionPane.showMessageDialog(component, "Configuration saved!");
+				}
+				break;
 			}
-			else if (command.equals("LOAD"))
+			case "LOAD":
 			{
-				fileIO.readConfig(file);
-				JOptionPane.showMessageDialog(component, "Configuration loaded!");
+				fileChooser.setApproveButtonText("Load");
+				int returnValue = fileChooser.showOpenDialog(component);
+				if (returnValue == JFileChooser.APPROVE_OPTION)
+				{
+					fileIO.loadProperties(fileChooser.getSelectedFile());
+					JOptionPane.showMessageDialog(component, "Configuration loaded!");
+				}
+				break;
 			}
-
+			case "RESET":
+			{
+				fileIO.loadDefaultProperties();
+				JOptionPane.showMessageDialog(component, "Default configuration loaded!");
+				break;
+			}
 		}
 	}
 }

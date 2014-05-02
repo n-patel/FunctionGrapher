@@ -7,9 +7,6 @@ import me.npatelaz.functiongrapher.util.FileIO;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
 
 /**
  * An application which graphs function. TODO: insert continued description here
@@ -57,15 +54,7 @@ public class Main
 
 		// Fill config panel with default values
 		FileIO fileIO = new FileIO();
-		URL url = ClassLoader.class.getResource("/resources/default.properties");
-		try
-		{
-			fileIO.readConfig(new File(url.toURI()));
-		}
-		catch (URISyntaxException e)
-		{
-			e.printStackTrace();
-		}
+		fileIO.loadDefaultProperties();
 
 		frame.pack();
 

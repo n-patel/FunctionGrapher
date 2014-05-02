@@ -4,6 +4,8 @@ import me.npatelaz.functiongrapher.config.AxesConfig;
 import me.npatelaz.functiongrapher.config.FunctionConfig;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Properties;
 
 /**
@@ -15,10 +17,10 @@ import java.util.Properties;
 public class FileIO
 {
 	/**
-	 * Read from a config properties file and set fields in application
-	 * @param file      file to read from
+	 * Loads values from a properties file to field values in the application
+	 * @param file      file to load from
 	 */
-	public void readConfig(File file)
+	public void loadProperties(File file)
 	{
 		Properties properties = new Properties();
 		InputStream inputStream;
@@ -49,10 +51,10 @@ public class FileIO
 
 
 	/**
-	 * Writes field values in application to a config properties file
-	 * @param file      file to write to
+	 * Stores field values from application to a properties file
+	 * @param file      file to store in
 	 */
-	public void writeConfig(File file)
+	public void storeProperties(File file)
 	{
 		Properties properties = new Properties();
 		OutputStream outputStream;
@@ -77,6 +79,23 @@ public class FileIO
 			outputStream.close();
 
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	/**
+	 * Loads values from the default properties file to values in the application
+	 */
+	public void loadDefaultProperties()
+	{
+		URL url = ClassLoader.class.getResource("/resources/default.properties");
+		try
+		{
+			this.loadProperties(new File(url.toURI()));
+		}
+		catch (URISyntaxException e)
+		{
 			e.printStackTrace();
 		}
 	}

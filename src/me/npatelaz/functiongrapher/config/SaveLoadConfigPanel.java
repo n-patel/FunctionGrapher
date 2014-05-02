@@ -25,24 +25,30 @@ public class SaveLoadConfigPanel extends AbstractPanel
 		return instance;
 	}
 
-	JButton save;
-	JButton load;
 
+	/**
+	 * Populates the JPanel with the saving/loading buttons
+	 */
 	@Override
 	public void populate()
 	{
 		SaveLoadConfigListener saveLoadConfigListener = new SaveLoadConfigListener();
 
-		save = new JButton("Save");
+		JButton save = new JButton("Save");
 		save.addActionListener(saveLoadConfigListener);
 		save.setActionCommand("SAVE");
 
-		load = new JButton("Load");
+		JButton load = new JButton("Load");
 		load.addActionListener(saveLoadConfigListener);
 		load.setActionCommand("LOAD");
 
+		JButton loadDefaults = new JButton("Reset");
+		loadDefaults.addActionListener(saveLoadConfigListener);
+		loadDefaults.setActionCommand("RESET");
+
 		add(save);
 		add(load);
+		add(loadDefaults);
 	}
 
 }
