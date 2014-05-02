@@ -30,7 +30,6 @@ public class WolframAlphaHelper
 	private class WolframAlphaRunnable implements Runnable
 	{
 		private String queryText;
-		private String resultText;
 
 		/**
 		 * Constructor to set query text
@@ -58,7 +57,7 @@ public class WolframAlphaHelper
 			query.setInput(queryText);
 
 			WAQueryResult queryResult;
-			resultText = "";
+			String resultText = "";
 
 			try
 			{

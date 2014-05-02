@@ -31,8 +31,8 @@ public class WolframAlphaListener implements ActionListener
 				String function = FunctionConfig.getInstance().getFunction();
 
 				// Update the result text area
-				WolframAlphaDisplay.getInstance().setQuery(function);
-				WolframAlphaDisplay.getInstance().updateResultText();
+				WolframAlphaDisplay.getInstance().setQuery("y=" + function);
+				WolframAlphaDisplay.getInstance().query();
 
 				break;
 			}

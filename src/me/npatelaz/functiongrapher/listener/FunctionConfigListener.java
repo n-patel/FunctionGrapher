@@ -37,7 +37,7 @@ public class FunctionConfigListener implements ActionListener
 				Function.setExpression(fieldValue);
 
 				// Query Wolfram Alpha
-				WolframAlphaDisplay.getInstance().submitQuery();
+				WolframAlphaDisplay.getInstance().clickUpdateButton();
 
 				break;
 			}

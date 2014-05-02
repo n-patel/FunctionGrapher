@@ -48,7 +48,7 @@ public class WolframAlphaDisplay extends AbstractPanel
 		add(new JScrollPane(textArea));
 		add(update);
 
-		updateResultText();
+		query();
 	}
 
 
@@ -63,11 +63,12 @@ public class WolframAlphaDisplay extends AbstractPanel
 
 
 	/**
-	 * Updates the result text area by simulating a button press
+	 * Simulates a press of the update button
 	 */
-	public void submitQuery()
+	public void clickUpdateButton()
 	{
-		if (update != null) {
+		if (update != null)
+		{
 			update.doClick();
 		}
 	}
@@ -76,7 +77,7 @@ public class WolframAlphaDisplay extends AbstractPanel
 	/**
 	 * Updates the result text area
 	 */
-	public void updateResultText()
+	public void query()
 	{
 		textArea.setText("Querying...");
 		new WolframAlphaHelper().query(query);
