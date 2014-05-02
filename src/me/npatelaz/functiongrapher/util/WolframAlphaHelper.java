@@ -1,6 +1,7 @@
 package me.npatelaz.functiongrapher.util;
 
 import com.wolfram.alpha.*;
+import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
 
 /**
  * Description
@@ -11,67 +12,96 @@ import com.wolfram.alpha.*;
 public class WolframAlphaHelper
 {
 	/**
-	 * Returns a string containing the query result for a given input
+	 * Queries Wolfram Alpha
+	 *
 	 * @param queryText     text to query
-	 * @return              query result from WolframAlpha
 	 */
-	public static String query(String queryText)
+	public void query(String queryText)
 	{
-		// Set up WolframAlpha engine
-		WAEngine engine = new WAEngine();
-		engine.setAppID("KGQA7X-WR86X7AL2K");
-		engine.addFormat("plaintext");
+		WolframAlphaRunnable wolframAlphaRunnable = new WolframAlphaRunnable(queryText);
+		Thread thread = new Thread(wolframAlphaRunnable);
+		thread.start();
+	}
 
-		// Set up WolframAlpha query
-		WAQuery query = engine.createQuery();
-		query.setInput(queryText);
 
-		WAQueryResult queryResult;
-		String queryResultText = "";
+	/**
+	 * Runnable class to query Wolfram Alpha
+	 */
+	private class WolframAlphaRunnable implements Runnable
+	{
+		private String queryText;
+		private String resultText;
 
-		try
+		/**
+		 * Constructor to set query text
+		 * @param queryText     text to query
+		 */
+		public WolframAlphaRunnable(String queryText)
 		{
-			queryResult = engine.performQuery(query);
+			this.queryText = queryText;
+		}
 
-			if (queryResult.isError())
+		/**
+		 * Queries, then directly sets the Wolfram Alpha text field.
+		 * Although this is a terrible way to do it (high coupling, no separation of MVC, etc) I'm not sure how else to get this to work.
+		 */
+		@Override
+		public void run()
+		{
+			// Set up WolframAlpha engine
+			WAEngine engine = new WAEngine();
+			engine.setAppID("KGQA7X-WR86X7AL2K");
+			engine.addFormat("plaintext");
+
+			// Set up WolframAlpha query
+			WAQuery query = engine.createQuery();
+			query.setInput(queryText);
+
+			WAQueryResult queryResult;
+			resultText = "";
+
+			try
 			{
-				queryResultText = "Query error: " + queryResult.getErrorMessage() + "(code " + queryResult.getErrorCode() + ").";
-			}
-			else if (!queryResult.isSuccess())
-			{
-				queryResultText = "No results available.";
-			}
-			else
-			{
-				for (WAPod pod : queryResult.getPods())
+				queryResult = engine.performQuery(query);
+
+				if (queryResult.isError())
 				{
-					if (!pod.isError() && !pod.getTitle().contains("Plot"))
+					resultText = "Query error: " + queryResult.getErrorMessage() + "(code " + queryResult.getErrorCode() + ").";
+				}
+				else if (!queryResult.isSuccess())
+				{
+					resultText = "No results available.";
+				}
+				else
+				{
+					for (WAPod pod : queryResult.getPods())
 					{
-						queryResultText += pod.getTitle() + "\n";
-						queryResultText += "------------" + "\n";
-
-						for (WASubpod subpod : pod.getSubpods())
+						if (!pod.isError() && !pod.getTitle().contains("Plot"))
 						{
-							for (Object element : subpod.getContents())
+							resultText += pod.getTitle() + "\n";
+							resultText += "------------" + "\n";
+
+							for (WASubpod subpod : pod.getSubpods())
 							{
-								if (element instanceof WAPlainText)
+								for (Object element : subpod.getContents())
 								{
-									queryResultText += ((WAPlainText)element).getText() + "\n";
+									if (element instanceof WAPlainText)
+									{
+										resultText += ((WAPlainText)element).getText() + "\n";
+									}
 								}
 							}
+							resultText += "\n";
 						}
-						queryResultText += "\n";
 					}
 				}
 			}
-		}
-		catch (WAException e)
-		{
-			e.printStackTrace();
-		}
+			catch (WAException e)
+			{
+				e.printStackTrace();
+			}
+			WolframAlphaDisplay.getInstance().setQueryResult(resultText);
 
-		return queryResultText;
+		}
 	}
-
 }
-

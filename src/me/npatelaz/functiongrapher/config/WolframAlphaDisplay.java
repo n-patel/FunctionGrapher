@@ -1,3 +1,4 @@
+
 package me.npatelaz.functiongrapher.config;
 
 import me.npatelaz.functiongrapher.listener.WolframAlphaListener;
@@ -77,9 +78,17 @@ public class WolframAlphaDisplay extends AbstractPanel
 	 */
 	public void updateResultText()
 	{
-		String queryResultText = WolframAlphaHelper.query(query);
-		textArea.setText(queryResultText);
+		textArea.setText("Querying...");
+		new WolframAlphaHelper().query(query);
+	}
+
+	/**
+	 * Sets the query result text area
+	 * @param result        text to set
+	 */
+	public void setQueryResult(String result)
+	{
+		textArea.setText(result);
 	}
 
 }
-
