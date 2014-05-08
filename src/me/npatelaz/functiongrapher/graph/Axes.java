@@ -47,30 +47,35 @@ public class Axes
 		int x;
 		int y;
 
-		// Draw ticks along the positive part of the x-axis
-		for (x = 0; x <= getXMAX(); x += getXSCL())
+		if (getXSCL() != 0)
 		{
-			drawTick(g2, x, 0);
+			// Draw ticks along the positive part of the x-axis
+			for (x = 0; x <= getXMAX(); x += getXSCL())
+			{
+				drawTick(g2, x, 0);
+			}
+
+			// Draw ticks along the negative part of the x-axis
+			for (x = 0; x >= getXMIN(); x -= getXSCL())
+			{
+				drawTick(g2, x, 0);
+			}
 		}
 
-		// Draw ticks along the negative part of the x-axis
-		for (x = 0; x >= getXMIN(); x -= getXSCL())
+		if (getYSCL() != 0)
 		{
-			drawTick(g2, x, 0);
-		}
+			// Draw ticks along the positive part of the y-axis
+			for (y = 0; y <= getYMAX(); y += getYSCL())
+			{
+				drawTick(g2, 0, y);
+			}
 
-		// Draw ticks along the positive part of the y-axis
-		for (y = 0; y <= getYMAX(); y += getYSCL())
-		{
-			drawTick(g2, 0, y);
+			// Draw ticks along the negative part of the y-axis
+			for (y = 0; y >= getYMIN(); y -= getYSCL())
+			{
+				drawTick(g2, 0, y);
+			}
 		}
-
-		// Draw ticks along the negative part of the y-axis
-		for (y = 0; y >= getYMIN(); y -= getYSCL())
-		{
-			drawTick(g2, 0, y);
-		}
-
 	}
 
 

@@ -6,8 +6,7 @@ import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
-import static me.npatelaz.functiongrapher.Main.CONFIG_PADDING;
-import static me.npatelaz.functiongrapher.Main.CONFIG_WIDTH;
+import static me.npatelaz.functiongrapher.util.WindowDimensionConstants.*;
 
 /**
  * JPanel that contains the in-application configuration.
@@ -29,16 +28,6 @@ public class ConfigPanel extends JPanel
 		}
 		return instance;
 	}
-
-
-	// Panel height constants
-	// Note: These numbers were chosen based on how large the panels actually where. Because they will always be the same width,
-	//       they can have a constant height without the need to worry about resizing/scaling.
-	private static int FUNCTION_PANEL_HEIGHT = 115;
-	private static int AXES_PANEL_HEIGHT     = 185;
-	private static int SAVELOAD_PANEL_HEIGHT = 65;
-	private static int WOLFRAM_PANEL_HEIGHT  = 295;
-
 
 	/**
 	 * Initializes the JPanel with the function and axes config panels

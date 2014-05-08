@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
+import static me.npatelaz.functiongrapher.util.WindowDimensionConstants.*;
+
 /**
  * Main controlled class for an application which graphs function.
  *
@@ -16,13 +18,6 @@ import java.awt.Dimension;
  */
 public class Main
 {
-	// Window dimension constants
-	public static final int WINDOW_HEIGHT = 700;
-	public static final int WINDOW_WIDTH  = 950;
-	public static final int CONFIG_WIDTH  = 250;
-	public static final int CONFIG_PADDING = 20;
-
-
 	public static void main(String[] args)
 	{
 		// Set the Metal (crossplatform) look & feel
