@@ -31,6 +31,7 @@ public class AxesConfig extends AbstractPanel
 		return instance;
 	}
 
+
 	/**
 	 * Populates the JPanel with the axes configuration text fields
 	 */
@@ -60,6 +61,7 @@ public class AxesConfig extends AbstractPanel
         }
 
 	}
+
 
 	/**
 	 * @return xmin     xmin field text
@@ -115,7 +117,8 @@ public class AxesConfig extends AbstractPanel
 	/**
 	 * @return ymin     ymin field text
 	 */
-	public String getYminField() {
+	public String getYminField()
+	{
 		return ymin.getText();
 	}
 
@@ -131,7 +134,8 @@ public class AxesConfig extends AbstractPanel
 	/**
 	 * @return ymax     ymax field text
 	 */
-	public String getYmaxField() {
+	public String getYmaxField()
+	{
 		return ymax.getText();
 	}
 

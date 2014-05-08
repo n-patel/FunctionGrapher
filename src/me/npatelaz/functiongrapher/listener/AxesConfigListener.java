@@ -37,10 +37,8 @@ public class AxesConfigListener implements ActionListener
 			case "YMAX": setYMAX(fieldValue);    break;
 			case "YSCL": setYSCL(fieldValue);    break;
 		}
-
 		// Update the graph panel
 		GraphPanel.getInstance().repaint();
-
 	}
 
 }

@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
  */
 public class SaveLoadConfigListener implements ActionListener
 {
-
 	/**
 	 * Listens to action commands fired by buttons on the Save/Load panel and attempts to save/load accordingly
 	 * @param e     ActionEvent that was fired

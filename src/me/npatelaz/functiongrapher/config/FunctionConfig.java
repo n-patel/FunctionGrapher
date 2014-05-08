@@ -18,7 +18,8 @@ public class FunctionConfig extends AbstractPanel
 
 	public static FunctionConfig getInstance()
 	{
-		if (instance == null) {
+		if (instance == null)
+		{
 			instance = new FunctionConfig();
 		}
 		return instance;
@@ -72,6 +73,7 @@ public class FunctionConfig extends AbstractPanel
 	{
 		return String.valueOf(color.getSelectedItem());
 	}
+
 
 	/**
 	 * @param color     color text field to set

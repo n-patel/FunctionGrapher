@@ -60,9 +60,7 @@ public class FunctionConfigListener implements ActionListener
 				break;
 			}
 		}
-
 		// Update the graph panel
 		GraphPanel.getInstance().repaint();
 	}
-
 }

@@ -37,8 +37,6 @@ public class WolframAlphaListener implements ActionListener
 				break;
 			}
 		}
-
 	}
-
 }
 

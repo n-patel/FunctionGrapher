@@ -20,7 +20,8 @@ public class WolframAlphaDisplay extends AbstractPanel
 
 	public static WolframAlphaDisplay getInstance()
 	{
-		if (instance == null) {
+		if (instance == null)
+		{
 			instance = new WolframAlphaDisplay();
 		}
 		return instance;
@@ -82,6 +83,7 @@ public class WolframAlphaDisplay extends AbstractPanel
 		textArea.setText("Querying...");
 		new WolframAlphaHelper().query(query);
 	}
+
 
 	/**
 	 * Sets the query result text area

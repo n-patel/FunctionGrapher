@@ -17,7 +17,8 @@ public class GraphPanel extends JPanel
 
 	public static GraphPanel getInstance()
 	{
-		if (instance == null) {
+		if (instance == null)
+		{
 			instance = new GraphPanel();
 		}
 		return instance;
@@ -42,5 +43,4 @@ public class GraphPanel extends JPanel
 		Axes axes = new Axes(this);
 		axes.draw(g2);
 	}
-
 }

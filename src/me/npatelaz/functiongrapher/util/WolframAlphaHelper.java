@@ -100,7 +100,6 @@ public class WolframAlphaHelper
 				e.printStackTrace();
 			}
 			WolframAlphaDisplay.getInstance().setQueryResult(resultText);
-
 		}
 	}
 }

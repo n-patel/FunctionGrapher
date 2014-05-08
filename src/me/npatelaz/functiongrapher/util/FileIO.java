@@ -78,7 +78,9 @@ public class FileIO
 			outputStream.flush();
 			outputStream.close();
 
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 	}

@@ -23,7 +23,8 @@ public class ConfigPanel extends JPanel
 
 	public static ConfigPanel getInstance()
 	{
-		if (instance == null) {
+		if (instance == null)
+		{
 			instance = new ConfigPanel();
 		}
 		return instance;
@@ -66,4 +67,5 @@ public class ConfigPanel extends JPanel
 		wolframAlphaDisplay.initialize("Wolfram Alpha", new Dimension(CONFIG_WIDTH - CONFIG_PADDING, WOLFRAM_PANEL_HEIGHT), new FlowLayout());
 		add(wolframAlphaDisplay);
 	}
+
 }
