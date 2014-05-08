@@ -7,7 +7,7 @@ import me.npatelaz.functiongrapher.util.WolframAlphaHelper;
 import javax.swing.*;
 
 /**
- * Description
+ * JPanel that contains the Wolfram Alpha query controls.
  *
  * Nikhil Patel
  * File created on Apr 17, 2014

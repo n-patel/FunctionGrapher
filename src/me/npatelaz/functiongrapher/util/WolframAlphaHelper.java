@@ -4,7 +4,7 @@ import com.wolfram.alpha.*;
 import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
 
 /**
- * Description
+ * Utility class to query Wolfram Alpha.
  *
  * Nikhil Patel
  * File created on Apr 21, 2014

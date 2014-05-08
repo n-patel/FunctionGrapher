@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Description
+ * Listens to action commands fired by buttons on the Save/Load panel and attempts to save/load accordingly.
  *
  * Nikhil Patel
  * File created on Apr 29, 2014
@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
 public class SaveLoadConfigListener implements ActionListener
 {
 
+	/**
+	 * Listens to action commands fired by buttons on the Save/Load panel and attempts to save/load accordingly
+	 * @param e     ActionEvent that was fired
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -29,9 +33,12 @@ public class SaveLoadConfigListener implements ActionListener
 			case "SAVE":
 			{
 				fileChooser.setApproveButtonText("Save");
+
+				// Show file chooser dialog
 				int returnValue = fileChooser.showOpenDialog(component);
 				if (returnValue == JFileChooser.APPROVE_OPTION)
 				{
+					// Save current properties
 					fileIO.storeProperties(fileChooser.getSelectedFile());
 					JOptionPane.showMessageDialog(component, "Configuration saved!");
 				}
@@ -40,9 +47,11 @@ public class SaveLoadConfigListener implements ActionListener
 			case "LOAD":
 			{
 				fileChooser.setApproveButtonText("Load");
+				// Show file chooser dialog
 				int returnValue = fileChooser.showOpenDialog(component);
 				if (returnValue == JFileChooser.APPROVE_OPTION)
 				{
+					// Load properties from selected file
 					fileIO.loadProperties(fileChooser.getSelectedFile());
 					JOptionPane.showMessageDialog(component, "Configuration loaded!");
 				}
@@ -50,6 +59,7 @@ public class SaveLoadConfigListener implements ActionListener
 			}
 			case "RESET":
 			{
+				// Load the default properties
 				fileIO.loadDefaultProperties();
 				JOptionPane.showMessageDialog(component, "Default configuration loaded!");
 				break;

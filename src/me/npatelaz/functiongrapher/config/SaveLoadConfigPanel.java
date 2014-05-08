@@ -5,7 +5,7 @@ import me.npatelaz.functiongrapher.listener.SaveLoadConfigListener;
 import javax.swing.JButton;
 
 /**
- * Description
+ * JPanel that contains the save/load configuration controls.
  *
  * Nikhil Patel
  * File created on Apr 29, 2014

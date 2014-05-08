@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 /**
- * An application which graphs function. TODO: insert continued description here
+ * Main controlled class for an application which graphs function.
  *
  * Nikhil Patel
  * File created on Apr 05, 2014
