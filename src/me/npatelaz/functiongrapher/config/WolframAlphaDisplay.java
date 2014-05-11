@@ -1,6 +1,7 @@
 
 package me.npatelaz.functiongrapher.config;
 
+import me.npatelaz.functiongrapher.listener.TaskListener;
 import me.npatelaz.functiongrapher.listener.WolframAlphaListener;
 import me.npatelaz.functiongrapher.util.WolframAlphaHelper;
 
@@ -12,7 +13,7 @@ import javax.swing.*;
  * Nikhil Patel
  * File created on Apr 17, 2014
  */
-public class WolframAlphaDisplay extends AbstractPanel
+public class WolframAlphaDisplay extends AbstractPanel implements TaskListener
 {
 	private static WolframAlphaDisplay instance;
 
@@ -29,6 +30,7 @@ public class WolframAlphaDisplay extends AbstractPanel
 
 
 	private String query;
+	private WolframAlphaHelper wolframAlphaHelper;
 
 	private JTextArea textArea;
 	private JButton update;
@@ -76,22 +78,23 @@ public class WolframAlphaDisplay extends AbstractPanel
 
 
 	/**
-	 * Updates the result text area
+	 * Queries Wolfram Alpha and updates the result text area
 	 */
 	public void query()
 	{
 		textArea.setText("Querying...");
-		new WolframAlphaHelper().query(query);
+		wolframAlphaHelper = new WolframAlphaHelper();
+		wolframAlphaHelper.query(query, this);
 	}
 
 
 	/**
-	 * Sets the query result text area
-	 * @param result        text to set
+	 * Runs when the query is complete
+	 * @param runner        Runnable
 	 */
-	public void setQueryResult(String result)
+	@Override
+	public void threadComplete(Runnable runner)
 	{
-		textArea.setText(result);
+		textArea.setText(wolframAlphaHelper.getResultText());
 	}
-
 }

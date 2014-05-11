@@ -1,7 +1,9 @@
 package me.npatelaz.functiongrapher.util;
 
 import com.wolfram.alpha.*;
-import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
+import me.npatelaz.functiongrapher.listener.TaskListener;
+
+import java.util.*;
 
 /**
  * Utility class to query Wolfram Alpha.
@@ -11,14 +13,22 @@ import me.npatelaz.functiongrapher.config.WolframAlphaDisplay;
  */
 public class WolframAlphaHelper
 {
+	private String queryText;
+	private String resultText;
+
 	/**
 	 * Queries Wolfram Alpha
 	 *
 	 * @param queryText     text to query
 	 */
-	public void query(String queryText)
+	public void query(String queryText, TaskListener listener)
 	{
-		WolframAlphaRunnable wolframAlphaRunnable = new WolframAlphaRunnable(queryText);
+		// Sets the query text
+		this.queryText = queryText;
+
+		// Sets up and starts Wolfram Alpha runnable
+		WolframAlphaRunnable wolframAlphaRunnable = new WolframAlphaRunnable();
+		wolframAlphaRunnable.addListener(listener);
 		Thread thread = new Thread(wolframAlphaRunnable);
 		thread.start();
 	}
@@ -29,20 +39,8 @@ public class WolframAlphaHelper
 	 */
 	private class WolframAlphaRunnable implements Runnable
 	{
-		private String queryText;
-
 		/**
-		 * Constructor to set query text
-		 * @param queryText     text to query
-		 */
-		public WolframAlphaRunnable(String queryText)
-		{
-			this.queryText = queryText;
-		}
-
-		/**
-		 * Queries, then directly sets the Wolfram Alpha text field.
-		 * Although this is a terrible way to do it (high coupling, no separation of MVC, etc) I'm not sure how else to get this to work.
+		 * Queries, then notifies all listeners of its completion
 		 */
 		@Override
 		public void run()
@@ -57,7 +55,6 @@ public class WolframAlphaHelper
 			query.setInput(queryText);
 
 			WAQueryResult queryResult;
-			String resultText = "";
 
 			try
 			{
@@ -99,7 +96,31 @@ public class WolframAlphaHelper
 			{
 				e.printStackTrace();
 			}
-			WolframAlphaDisplay.getInstance().setQueryResult(resultText);
+			notifyListeners();
+			//WolframAlphaDisplay.getInstance().setQueryResult(resultText);
 		}
+
+		private final List<TaskListener> listeners = Collections.synchronizedList(new ArrayList<TaskListener>());
+
+		public void addListener(TaskListener listener)
+		{
+			listeners.add(listener);
+		}
+
+		public void notifyListeners()
+		{
+			synchronized (listeners)
+			{
+				for (TaskListener listener : listeners)
+				{
+					listener.threadComplete(this);
+				}
+			}
+		}
+	}
+
+	public String getResultText()
+	{
+		return this.resultText;
 	}
 }
