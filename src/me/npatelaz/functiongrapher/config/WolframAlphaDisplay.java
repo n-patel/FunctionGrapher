@@ -66,25 +66,15 @@ public class WolframAlphaDisplay extends AbstractPanel implements TaskListener
 
 
 	/**
-	 * Simulates a press of the update button
-	 */
-	public void clickUpdateButton()
-	{
-		if (update != null)
-		{
-			update.doClick();
-		}
-	}
-
-
-	/**
-	 * Queries Wolfram Alpha and updates the result text area
+	 * Queries Wolfram Alpha
 	 */
 	public void query()
 	{
 		textArea.setText("Querying...");
+
 		wolframAlphaHelper = new WolframAlphaHelper();
-		wolframAlphaHelper.query(query, this);
+		wolframAlphaHelper.addListenerToRunnable(this);
+		wolframAlphaHelper.query(query);
 	}
 
 
@@ -97,4 +87,17 @@ public class WolframAlphaDisplay extends AbstractPanel implements TaskListener
 	{
 		textArea.setText(wolframAlphaHelper.getResultText());
 	}
+
+
+	/**
+	 * Simulates a press of the update button
+	 */
+	public void clickUpdateButton()
+	{
+		if (update != null)
+		{
+			update.doClick();
+		}
+	}
+
 }
