@@ -43,7 +43,7 @@ public class Function
 	{
 		g2.setColor(color);
 		g2.setStroke(new BasicStroke(thickness));
-		double d = (getXMAX() - getXMIN()) / 1000.0;                // how much x increments each calculation
+		double d = (getXMAX() - getXMIN()) / 10000.0;                // how much x increments each calculation
 		for (double x = getXMIN(); x <= getXMAX(); x += d)
 		{
 			Point2D.Double point1 = new Point2D.Double(xPixel(x, p),
