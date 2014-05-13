@@ -1,0 +1,26 @@
+FunctionGrapher: End-User Documentation
+This document contains information on how to compile, configure, and use the project.
+
+FunctionGrapher is a program, written in Java, that allows you to graph functions and change how you visualize them.  Not only can it save the current view configurations for loading at a later point, it can also query Wolfram Alpha for information that is relevant to the function (e.g. derivatives, indefinite integrals, roots, etc).
+
+Pre-requisites:
+- Java 7: Your computer must be running Java 7.  The program will not work with previous versions of Java.  To update your version of Java, visit http://www.java.com/en/download/manual.jsp.
+- An internet connection: Not necessary for the majority of the program to work, but you will need the internet if you'd like to be able to utilize the Wolfram Alpha query feature.
+
+To obtain the runnable JAR for this project, visit https://github.com/nikhilpatel1/FunctionGrapher/releases and download the latest release.
+
+A quick description of each text field, in descending order (as they appear on the application):
+- Function: Changes the function that is graphed.  The four basic operations are addition (+), subtraction (-), multiplication (*), and division (/).  Other mathematical expressions are allowed, including sin(x), cos(x), tan(x), log(x), sqrt(x), and more.  x is the only allowed variable.  Be sure to use an asterisk when multiplying any two numbers together, as expressions like 4x are not valid (it should be 4*x).  Spaces between operators are optional and parenthesis can be used for grouping operations.
+- Color: Changes the color of the function.  The only colors allowed are the ones that are pre-packaged with Java.
+- Brushstroke: Changes the thickness of the line of the function.  It accepts float values, meaning that decimals like 3.5 can be used.
+- XMIN: Changes the minimum value of the x-axis.
+- XMAX: Changes the maximum value of the x-axis.
+- XSCL: Changes how frequently tickmarks are drawn along the x-axis.
+- YMIN: Changes the minimum value of the y-axis.
+- YMAX: Changes the maximum value of the y-axis.
+- YSCL: Changes how frequently tickmarks are drawn along the y-axis.
+NOTE: The axes configuration fields are all integers, meaning that they do not allow decimals. All numbers must be positive whole numbers (with the exception of XSCL/YSCL, which can be 0 to hide tickmarks).
+
+The next portion of the configuration panel is the save/load panel.  The Save button allows you to save the current settings -- the function, color, brushstroke, and axes measurements -- to a file for use later.  Please end the filename with .properties to ensure that the file saves/loads properly.  The Load button allows you to load previously-saved settings into the program.  Note that this will erase whatever settings are currently set.  The Reset button allows you to load the default settings (the ones present on startup).  Once again, note that hitting the Reset button will erase the current settings.
+
+The final part of the configuration panel is the Wolfram Alpha information panel.  When you enter a function and click the ENTER key, Wolfram Alpha is automatically queried and the returned information is displayed in the large text box.  If there is a problem with querying, try hitting the Update button below the text box.  If the problem persists, you may not be connected to the internet properly.
